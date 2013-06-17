@@ -1,0 +1,670 @@
+_______________________________________________________________________
+_______________________________________________________________________
+
+  Cameraderie v1.5
+
+  (C) Copyright 2006, 2007  R L Walsh
+
+  released under the Mozilla Public License
+
+_______________________________________________________________________
+_______________________________________________________________________
+
+  Using Cameraderie
+  -----------------
+
+  * Overview
+  * New Features in v1.5
+  * Installation
+  * Startup & Shutdown
+  * The Display
+  * Groups
+  * How to
+    - Mark & Unmark Photos
+    - Rename Photos
+    - Set Save-in Directories
+    - Save Your Work
+    - Use Multiple Cameras
+    - Configure Groups
+    - Keyboard Shortcuts
+    - Miscellanea
+  * Translating Cameraderie
+  * Troubleshooting
+    - Commandline options
+  * Acknowledgements
+
+_______________________________________________________________________
+
+* Overview *
+_______________________________________________________________________
+
+  Cameraderie makes it easy to organize your photos while they're still
+  on your camera and fresh in your mind.  Thanks to its Groups feature,
+  renaming a photo and saving it into a directory with similar pictures
+  requires little more than the click of a button.
+
+  While Cameraderie offers features that should make saving your photos
+  easy, it doesn't require you to use any of them. Similarly, it offers
+  a lot of info about each picture, but doesn't require you to view any
+  of it. In Details view, you can hide columns which don't interest you
+  and rearrange the ones which do.
+
+  Cameraderie supports most digital cameras made in the last few years
+  that connect via USB (v1.1 & v2.0).  It also supports the flash cards
+  used by these cameras.  The program is open-source and is released
+  under the Mozilla Public License; see the file 'MPL-1.1.txt' for the
+  complete text.  You can contact the author, Rich Walsh, via email at
+  <rich@e-vertise.com>.
+
+  Note:  Cameraderie was not designed to be a "one-click downloader".
+  For that, PTP camera owners should use my "PTPro" commandline app
+  with a script or program object that sets the appropriate parameters.
+  Mass Storage Device owners should consider FotoGet/2 or xcopy.
+
+_______________________________________________________________________
+
+* New Features in v1.5 *
+_______________________________________________________________________
+
+  Cameraderie's primary new feature is support for Mass Storage Device
+  cameras & flash cards.  If your camera presents itself as a removable
+  drive, or if you have a flash card from any digital camera, you can
+  now use it with Cameraderie.
+
+  All of Cam's original PTP features are available:
+    - a unified display that lets you view every photo on the device
+      in a single window, either as thumbnails or as a detailed listing
+    - versatile sorting and renaming features so that every photo
+      can be saved in the directory you want with the name you want
+    - automatic rotation that ensures your photos will always be
+      viewed and saved right-side up
+
+  To better support MSD cameras and cards, Cameraderie v1.5 adds:
+    - an Open dialog to switch between cameras and cards
+    - automatic mounting & dismounting of removables if LVM is present
+    - the ability to open the program without selecting a camera
+
+  Important:  Only removable drives that have a "DCIM" subdirectory
+              will be identified as MSD "cameras".  All other drives
+              will be ignored.
+
+_______________________________________________________________________
+
+* Installation *
+_______________________________________________________________________
+
+  CAMERA.EXE   - can go in any convenient directory
+
+  CAM_??.DLL   - if there is an NLS support dll for your language,
+                 (e.g. CAM_DE.DLL) put it in the same directory as
+                 the exe;  you can delete NLS dlls you don't need
+
+  CAMNLS       - if you would like to translate Cameraderie into
+  (subdirectory) another language, put it in the same directory
+                 as camera.exe;  otherwise, you can delete it.
+
+  USBCALLS.DLL - should be placed in either the same directory as
+                 camera.exe or in a directory along your LIBPATH
+                 (ensure there aren't older copies in directories
+                 along the LIBPATH, e.g. \ecs\dll)
+
+  USBRESMG.SYS - this is only needed if you use a PTP camera;  put
+                 it in x:\os2\boot and add this line to config.sys
+                    DEVICE=X:\OS2\BOOT\USBRESMG.SYS
+                 After you add or update usbresmg.sys, you must reboot.
+
+    IMPORTANT!   USBCALLS.DLL & USBRESMG.SYS are a *matched* pair and
+                 _must_ come from the same distribution.  You can use
+                 any version dated July, 2006 or later.
+
+  Not included but required:
+  LIBC061.DLL  - if you don't have this already, obtain it from:
+                   ftp://ftp.netlabs.org/pub/gcc/libc-0.6.1-csd1.zip
+                 Place the 3 files from the archive into a directory
+                 along your LIBPATH since many apps use this dll.
+
+_______________________________________________________________________
+
+* Startup & Shutdown *
+_______________________________________________________________________
+
+  Startup
+  -------
+  Attach your camera or card via USB (v1.1 or v2.0), wait for a few
+  seconds, then start camera.exe.  Cameraderie will search for devices
+  that "look" like cameras (i.e. any PTP camera, and any removable
+  mass storage device that has a "DCIM" subdirectory in its root).
+  If LVM is installed, Cam will mount your mass storage cameras and
+  cards automatically.
+
+  When Cameraderie finds a single camera or card, it begins loading
+  your photos immediately.  If Cam finds more than one, it displays
+  a list and asks you to choose.  When it can't find any suitable
+  device, a "No cameras found" popup will appear.  Make sure your
+  camera is plugged in, wait another few seconds, then press 'Retry'.
+
+  Note:  The first time you run Cameraderie, it will prompt you to
+  enter a default directory to store your photos.
+
+  Shutdown
+  --------
+  If you've marked files to be saved or deleted but haven't done
+  so yet, Cameraderie will ask whether you want to save your work.
+  Then, if it detected any removable drives that looked like cameras,
+  Cam will ask whether you want to eject them.  To avoid being asked
+  each time, you can select 'Options->Removable Drives' from the menu
+  and choose either 'always eject' or 'never eject'.
+
+  Note:  there's no need to explicitly eject a PTP camera - closing
+  the program has the same effect.
+
+_______________________________________________________________________
+
+* The Display *
+_______________________________________________________________________
+
+  File List
+  ---------
+  The File List offers four views:  a Details view and three Thumbnail
+  views. It displays every file on your camera, both photos and other
+  files.  Folders your camera creates are ignored and not displayed.
+
+  While the layout may vary, each view operates the same.  You can
+  select one or more photos, then:
+    * mark them to be saved or deleted
+    * assign them to a group
+    * rename them
+    * right-click to display a context menu
+
+  Details view:
+  - This view lists all of the information your camera provides about
+    each file.  The first column displays the file's status:  marked
+    to be saved or deleted, or already saved (deleted files are removed
+    from the listing).
+
+  - You can hide any column except the first one, and can change the
+    order in which they're displayed (select 'View->Rearrange columns'
+    on the menubar).  You can also sort the listing by clicking on the
+    column headings, and can adjust the width of columns by dragging
+    the lines which separate the columns.
+
+  Thumbnail views:
+  - These views display the thumbnails created by your camera.  The
+    'Medium' view displays images at their native resolution (160x120).
+    'Small' reduces the size by 50% (80x60) while 'Large' increases it
+    by 50% (240x180).
+
+  - A file's status and group info appears in the bottom left corner
+    of the image.  Additional information about the selected photo
+    (size and date) appears in the sidebar.  Note:  this info may be
+    hidden if the window is not tall enough to display it.
+
+  Status Bar
+  ----------
+  This shows the total number and size of all photos on the camera,
+  along with the number & size of files marked to be saved or deleted.
+  Some error messages may appear here as well.
+
+  Sidebar
+  -------
+  The top of the Sidebar displays a thumbnail of the currently selected
+  photo.  This thumbnail is created by the camera and not the program.
+  Below it on either side are Rotate buttons which you can use to
+  reorient a thumbnail.
+
+  Note: if "automatically rotate when saving" is enabled (the default),
+  your photos will be rotated (if needed) to match the thumbnail when
+  they are saved.
+
+  The rest of the Sidebar is occupied by the Group buttons (see below).
+  Some of these buttons may be hidden if the window is not tall enough
+  to display all of them.
+
+_______________________________________________________________________
+
+* Groups *
+_______________________________________________________________________
+
+  Many of the pictures we take fall into the same general categories,
+  and get filed with similar pictures, for example "Kids", "Pets", etc.
+  Cameraderie's Groups feature uses this idea to make organizing your
+  pictures quicker and easier.  The first time you use Cameraderie,
+  it will create 4 sample groups.  Feel free to edit or delete these
+  and add groups that meet your needs.
+
+  Use is simple:  create a group (e.g. "Pets") & identify a directory
+  where these photos should be stored (e.g. "f:\photos\pets").  If
+  you wish, supply a filename template to rename them as they're saved
+  to disk (e.g. "pets#" - the '#' will be replaced by a serial number).
+  Then, whenever you have a photo of your pets, select it and press
+  the 'Pets' group button or hotkey.  The picture will be saved in
+  your "pets" directory with a name like "pets0074.jpg".
+
+  Up to 10 groups can be assigned a button on the main window, and all
+  groups can be accessed from the listing window's popup menus.  You
+  can rearrange the order groups appear on the buttons and menus from
+  the Groups dialog.  You can also assign a hotkey to any group.  See
+  the section "How to: Configure Groups" below for more details.
+
+  Assigning a picture to a group doesn't prevent you from renaming it
+  manually.  The photo will be saved in the group's directory using
+  whatever name you choose.  In fact, the name you assign manually is
+  actually a template, so you can use '#' to give it a serial number.
+
+_______________________________________________________________________
+
+* How to *
+_______________________________________________________________________
+
+  Mark & Unmark Photos
+  --------------------
+  Select one or more photos, then use one of these:
+
+  Group buttons:  clicking any group button except 'default' will
+    both assign the photo(s) to a group and mark them to be saved.
+    Clicking 'default' will unmark them and remove them from a group.
+
+  Keyboard:  the 'Enter' and 'Delete' keys are toggles that will
+    mark and unmark the photo(s) to be saved or deleted, without
+    changing their group.  If you set up hotkeys for your groups,
+    you can assign photos to them (even if they don't have a button)
+    by pressing 'Ctrl' and whatever letter you chose.  The hotkey
+    for the 'default' group is Ctrl-Backspace.
+
+  Context Menus:  right-click on a photo and select 'Save', 'Delete',
+    or 'Unmark'.  If more than one photo is selected, every photo will
+    be set to the same state.  Alternately, use the 'Groups' submenu
+    to assign the photo(s) to any group - including groups that haven't
+    been assigned to one of the Group buttons.
+
+
+  Rename Photos
+  -------------
+  Automatically:  when you assign photos to a group, the filename
+    template for that group is used to rename the file when it gets
+    saved to disk.  The template can include a '*' to copy the original
+    name or extension, and a '#' to insert a serial number.  It can
+    also include NLS-aware metacharacters to insert part or all of the
+    photo's date.
+
+  Manually:  assigning photos to a group does _not_ prevent you
+    from renaming them manually.  The name you enter will be used
+    as a template, so you can include '*' and '#' if you wish.
+
+    To rename a single photo, just Alt-click on its title.  When done,
+    press the numeric keypad's 'Enter' key or click elsewhere.
+
+    To rename multiple photos, select them, then Alt-click on any one
+    of the selected titles.  When done, the same name will be applied
+    to all of them.  If you didn't include the sequence number
+    character ('#'), Cameraderie will append one.
+
+  Undo:  to restore the original name of any photo you've renamed
+    manually, display its context menu and select 'Undo Title'.
+
+
+  Set Save-in Directories
+  -----------------------
+  Automatically:  all photos belong to some group and are saved in
+    the directory specified for that group.  If you haven't assigned
+    a photo to any particular group, it belongs to the 'default' group
+    and is saved in that group's directory.  You can either specify
+    a particular directory (e.g. "f:\photos\pets") or you can have
+    Cam create directories automatically based on each photo's date.
+    Use the 'Edit Groups' button to change the path for any group.
+
+  Manually:  when you rename a photo, you can also enter the path
+    Cameraderie should use to save it.  The path can be either fully-
+    qualified or relative (i.e. using '.\' or '..\'), and can contain
+    metacharacters to create directories based on the photo's date.
+
+
+  Save Your Work
+  --------------
+  You can save and/or delete marked files at any time by selecting
+  'File->Save now' from the menubar.  If any files are still marked
+  when you close Cameraderie, it will ask whether you want to save
+  your work.  In either case, you can choose to Save, Delete, or both.
+
+  The Save dialog also lets you choose whether to automatically delete
+  photos after they've been saved or to mark them for deletion later.
+  Most errors that occur while saving your photos (e.g. invalid path)
+  can be corrected from the Save dialog.
+
+  Note:  Cameraderie resorts the file listing in date and time order
+  while saving files and restores the original sort order when done.
+  This ensures its serial numbers are assigned in chronological order.
+
+
+  Use Multiple Cameras
+  --------------------
+  To change the camera or card you're using, select 'File->Open...'
+  from the menubar.  If you haven't saved your work, you'll be asked
+  if you want to do so first.  The 'Select a Camera' dialog which
+  appears will list all available cameras & cards.  If the one you
+  want is listed, select it, then press 'Open'.  If you change your
+  mind and don't want to switch devices, just press 'Cancel'.
+
+  If you can only have one camera or card connected at a time, select
+  the current device, then press the Eject button (the one with the
+  triangle).  Disconnect the device you ejected, connect the new one,
+  then press 'Retry'.  The new camera or card will appear in the list.
+
+  Note:  You _must_ press the Eject button before disconnecting both
+  Mass Storage & PTP devices.  After you eject the current camera, Cam
+  will discard all data from that device, even if you press 'Cancel'.
+
+
+  Configure Groups
+  ----------------
+  To begin, press the 'Edit Groups' button.  Changes made to a group's
+  settings will be saved when you select another group or press the
+  'Apply' button.  All other changes will take effect immediately.
+  The Groups dialog contains these elements:
+
+  Group List:  shows all current groups plus groups you've deleted.
+    Select an item to edit or delete it.  Check it to assign it to a
+    button on the sidebar;  up to 10 groups can be assigned buttons.
+
+  Up & Down buttons:  changes the order groups are displayed on the
+    buttons and menus.  All changes are "live", so you can watch the
+    buttons being rearranged as you move an item up or down the list.
+    The keyboard shortcuts for these buttons are Alt+Up and Alt+Down.
+    Note:  the 'default' group at the top of the list cannot be moved.
+
+  Group Name:  any name you wish to give to a group (31 characters
+    maximum), provided it doesn't duplicate the name of another group.
+    To set a hotkey for the group, put a tilde ('~') in front of
+    whatever letter in the name you want to use.  This letter will be
+    underlined on buttons and menus.  For example, for a group named
+    "~Cats", Ctrl-C will be its hotkey.
+    Note:  the hotkey for the 'default' group is Ctrl-Backspace.
+
+  Save in Directory:  the directory used to store this group's photos.
+    Type in a path or press the 'Find' button to select one from a
+    file dialog.  If this field is blank, photos will go into the
+    current directory.  Create new directories to any depth either
+    by typing in the desired path and pressing 'Create', or by adding
+    new directory name(s) to the path shown in the Find dialog.
+
+    To store your photos by date, include these metacharacters in the
+    path:  %y (year), %m (month), and %d (day).  Cameraderie will
+    automatically create up to 3 levels of subdirectories based on
+    each photo's date.  E.g. "f:\photos\%y%m" or "f:\photos\%y\%m\%d".
+    To prevent Cam from mistaking a '%' in the path as part of a
+    metacharacter, enter '%%' - it will ignore the second '%'.
+
+    Note:  the date letters are NLS-enabled and match the first
+    letter of the current language's words for year, month, and
+    day (e.g. in German, they would be %j %m & %t).
+
+    Cameraderie validates an item's path when you select another item
+    or press 'Apply'.  It also validates all paths during startup.
+    If it finds an error at startup, the text on the 'Edit Groups'
+    button will be displayed in red.
+
+    Note:  When Cameraderie is _not_ running, feel free to move or
+    rename the directories it uses.  At startup, it will use the
+    WPS's file-tracking system to locate them.
+
+  Filename Template:  contains the pattern used to automatically
+    rename files as they are saved to disk.  You can override this
+    template by renaming individual photos.  To preserve the name
+    assigned by the camera, leave this field blank.
+
+    Templates can contain several metacharacters:  '#' inserts
+    a serial number in the name to ensure the name is unique;
+    '*' copies either the photo's original name or extension,
+    depending on where it's used.  If you don't include either
+    character, a '#' will be appended automatically.  You can
+    also include the date metacharacters (%y %m %d) described
+    above to include part or all of a file's date.
+
+    When creating a template, don't include an extension unless you
+    explicitly want to change it.  Cameraderie will copy the extension
+    from the original filename.
+    
+  Serial Number:  the number that will replace the '#' metacharacter
+    in a group's filename template.  The number is incremented after
+    each use and is saved from session to session.  It will also be
+    used if you rename individual photos and include a '#'.
+
+  Digits:  specifies the minimum number of digits in a serial number.
+    For example, if the serial number is '57' and the number of digits
+    is '4', Cameraderie will insert '0057'.  This ensures that files
+    sorted alphabetically will appear in the correct order.
+
+  Create button:  inserts a new group after the currently selected
+    item.  The default name is "New Group 1";  it's 'Save in Directory'
+    is copied from the 'default' group.  Edit the new group to suit
+    your needs.
+
+  Delete button:  marks a group for deletion but doesn't remove it
+    until you close the program.  Deleted groups are moved to the
+    bottom of the list and are disabled.  When one is selected, your
+    only option is to press the 'Undelete' button to restore the group.
+
+  Undo button:  reverses any changes made since you selected an item.
+    After you select another item, you cannot undo earlier changes.
+
+  Apply button:  only needed when you want to validate changes you've
+    made without selecting another item.
+
+
+  Keyboard Shortcuts
+  ------------------
+  Keyboard shortcuts you assign to Groups are activated using the
+  Ctrl key plus the letter you selected.  All other shortcuts use
+  the Alt key.  Here are some of the less-obvious shortcuts.
+
+  Main window:
+  - Default Group                   Ctrl+Backspace
+  - Rotate Left (counter-clockwise) Alt+Left arrow
+  - Rotate Right (clockwise)        Alt+Right arrow
+
+  Groups & Columns windows:
+  - Move item up in the list        Alt+Up arrow
+  - Move item down in the list      Alt+Down arrow
+
+
+  Miscellanea
+  -----------
+  Unmark Saved Files:  when Cameraderie saves a file without deleting
+    it, the program adds cross-hatching to the Status column & prevents
+    you from saving it again.  To override this behavior, display the
+    file's context menu, then click on 'Unmark' while pressing the
+    Control key.  This will remove the cross-hatching and permit you
+    to save the photo again.
+
+  Rotate Options:  these two options are enabled by default:
+    Rotate thumbnails automatically:  Cam will read the full-sized
+      photo's Exif data and use it to orient the thumbnail correctly.
+      Note that sometimes this data is incorrect;  in particular,
+      many cameras cannot detect that they are upside down.
+    Rotate photos when saving:  Cam will use "Lossless JPEG Rotation"
+      to reorient a photo so it matches the thumbnail.  It will also
+      update the saved photo's Exif data to indicate that it is now
+      oriented correctly.
+
+  Restore Default Settings:  to remove all of your customizations
+    _except_ the Groups you've created, from the menubar select
+    'Options->Restore defaults on exit', then restart the program.
+    This will reset colors, fonts, window sizes & positions, column
+    order, and column visibility.  You can also restore the defaults
+    by using the "reset" commandline option (see "Troubleshooting").
+
+  Demo Mode:  to start Cameraderie without loading any photos,
+    disconnect any cameras or flash cards, then start the app.
+    When the "No cameras found" popup appears, select "[no camera]"
+    then press the 'Open' button.  Alternately, you can use the
+    "demo" commandline option (see "Troubleshooting", below).
+
+_______________________________________________________________________
+
+* Translating Cameraderie *
+_______________________________________________________________________
+
+  Creating a version of Cameraderie for your language is very easy.
+  Everything that you need is already installed on your system:
+
+  - Edit 'camnls\cam_xx.txt' and translate the quoted strings into
+    your language.  For more details, refer to the instructions at
+    the top of that file.
+
+  - Run 'cam_xx.cmd' from the command line, supplying the 2-letter
+    code for your language as a parameter.  For example:
+      "cam_xx DE" for German ..or.. "cam_xx NL" for Dutch
+
+  - If successful, cam_xx.cmd will create a new dll that identifies
+    the language and move it into the main Cameraderie directory.
+    For example:  cam_DE.dll or cam_NL.dll.
+
+  - Reopen Cameraderie to see the results.  You can re-run cam_xx.cmd
+    as many times as you wish - it will create a new dll each time.
+
+  - If you would like to share your work with other users, please
+    email me your translated version of cam_xx.txt (not the dll!).
+    Send it to:  "Rich Walsh" <rich@e-vertise.com>
+
+  Note:  Cameraderie uses the 'LANG' environment variable to identify
+  which language dll it should use.  To use a different language than
+  the one identified in config.sys, set this variable to a new value
+  before reopening Cameraderie.
+
+  Most users running Warp v4.5 (MCP, eCS, etc.) can set this from
+  the WPS Properties notebook for their Cameraderie object.  Open
+  it to the 'Language' tab, then select the correct language from
+  the drop-down list labelled 'Locale name'.
+
+_______________________________________________________________________
+
+* Troubleshooting *
+_______________________________________________________________________
+
+  Known Issue
+  -----------
+  Owners of some PTP cameras may encounter problems when using Cam
+  to delete photos from the camera.  They may have to restart the
+  app and/or turn the camera off & on to clear errors.
+
+
+  Troubleshooting
+  ---------------
+  Most problems that users report involve USB.  It can be very hard
+  to tell if the cause is your camera, your USB hardware (including
+  the cable you're using), or your drivers.   It may be Cameraderie
+  itself, but honestly, it usually isn't. Here are some suggestions
+  that may help:
+
+    - reformat your camera's flash memory card
+    - install IBM's last USB drivers (v10.162)
+    - replace your USB cable with one that's USB 2.0-compliant
+    - connect your camera directly to the computer rather than a hub
+    - if your camera supports PTP and MSD, try both modes
+    - match the camera's USB version with the port's version (i.e.
+      a USB 1.1 camera to a USB 1.1 port) - one manufacturer admits
+      its 1.1 camera is unreliable when connected to a 2.0 port
+    - for USB 2.0 cameras connected to USB 1.1 ports, some cameras
+      (e.g. Canon) have an option to slow down the USB connection
+    - replace your USB card;  boards with Intel & Via chipsets will
+      use usbuhcd.sys which seems more reliable than usbohcd.sys
+    - use this as an excuse to replace your camera with a new one
+
+  By far, the most common problem for owners of PTP cameras is the
+  "Unable to initialize camera" error popup.  This is almost always
+  caused by mismatched versions of usbcalls.dll and usbresmg.sys.
+  Both files must come from the same distribution - any pair dated
+  July, 2006 or later should work.  If you move usbcalls.dll out of
+  your Cameraderie directory, make sure the system finds the correct
+  copy - there may be other versions you weren't aware of (e.g. in
+  \ecs\dll).  The console window described below will display the
+  full path of the dll that Cam is using.
+
+  For display issues (e.g. no thumbnails are displayed, windows are
+  not sized correctly, the splitbar is missing in Details view, etc),
+  select 'Options->Reset defaults on exit', then restart the program.
+  Alternately, you can use the "reset" commandline option (see below).
+
+  For other problems using Cameraderie, open an OS/2 window, change
+  to the Cameraderie directory, then run it using this command:
+    start /n /win camera
+  In addition to the usual window, a "console" window will appear
+  containing debug messages.  After you have recreated the problem,
+  copy the contents of this window to the clipboard, then paste it
+  into an email.  Please describe the issue and what may have caused
+  it.  Email your report to "Rich Walsh" <rich@e-vertise.com>
+
+
+  Commandline options
+  -------------------
+  Cameraderie's commandline options exist to fix specific problems
+  that very few people ever have.  Do not use them unless they are
+  the only way you can get Cam to work properly!  Enter them on the
+  commandline without quotes.
+
+  "demo":  Cam will not look for PTP cameras or mass storage devices
+    and will open with a blank window.  Changes in Cam's design and
+    new commandline options make this option largely unnecessary.
+
+  "reset":  fixes most display-related problems (e.g. dialog windows
+    that are invisible or the wrong size).  It resets colors, fonts,
+    window sizes & positions, column order, and column visibility.
+    Selecting 'Options->Reset defaults on exit' from the menubar has
+    the same effect.  Using this commandline option also prevents
+    Cam from mounting drives automatically (see "nolvm", below).
+
+  "nolvm":  keeps Cam from using LVM to discover & mount mass storage
+    devices as drives.  Use it if you frequently get Cam's popup that
+    LVM has hung (disconnecting drives that you've already ejected will
+    usually prevent this).  Unchecking 'Mount drives automatically" on
+    the 'Options->Removable Drives' menu or on the 'Open' dialog has
+    the same effect.
+
+  "force":  try this if you believe that your camera supports the
+    PTP protocol but Cameraderie reports "no cameras found".  This
+    option forces it to treat every USB device as PTP.  This only
+    works with a few older cameras and can cause other USB devices
+    to stop working until you turn them off and then back on.
+
+  "dave":  this fixed a problem that Dave M. had - it may not fix
+    anyone else's.  It is only useful if the Status bar at the bottom
+    of the window reports "Error while listing files".  After Dave
+    saved his photos, he reformatted both his flash card and the
+    camera's internal memory.  Since then, he hasn't needed to use
+    this fix.  This suggests that reformatting may be the best fix.
+
+_______________________________________________________________________
+
+* Acknowledgements *
+_______________________________________________________________________
+
+  The bulk of Cameraderie is the original work of Richard L. Walsh
+  and is (C) Copyright 2006, 2007  R L Walsh.  It is licensed under
+  the Mozilla Public License (MPL).
+
+  However, Cameraderie does incorporate the work of other authors,
+  though modified to suit the needs of OS/2 and this author's
+  preferences.  To the extent permitted by the original authors'
+  licenses, these modifications are also licensed under the MPL.
+
+    LIBUSB   - Copyright (C) 2000-2003 Johannes Erdfelt
+               Released under the Gnu Lesser Public License
+
+    LIBJPEG  - Copyright (C) 1991-1998 Thomas G. Lane
+               This software is based in part on the work of
+               the Independent JPEG Group.
+
+  I would also like to acknowledge the work of Mariusz Woloszyn,
+  author of LIBPTP, which gave me an understanding of how PTP works
+  and how to write an improved Picture Transfer Protocol interface.
+
+_______________________________________________________________________
+_______________________________________________________________________
+
+  Rich Walsh <rich@e-vertise.com>
+  Fort Myers, Florida
+
+  May 4, 2007
+_______________________________________________________________________
+_______________________________________________________________________
+

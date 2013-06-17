@@ -1,0 +1,822 @@
+_______________________________________________________________________
+_______________________________________________________________________
+
+  Cameraderie v1.5
+
+  (C) Copyright 2006, 2007  R L Walsh
+
+  distribu‚ sous licence publique Mozilla (Mozilla Public License)
+
+_______________________________________________________________________
+_______________________________________________________________________
+
+  Utilisation de Cameraderie
+  --------------------------
+
+  * Survol
+  * Nouvelles fonctionnalit‚s de la v1.5
+  * Installation
+  * D‚marrage et arrˆt
+  * L'affichage
+  * Les groupes
+  * Comment faire pour... 
+    - Marquer & d‚marquer des photo. 
+    - Renommer des photo. 
+    - D‚finir les r‚pertoires de sauvegarde
+    - Sauvegarder votre travail
+    - Configurer les groupes
+    - Raccourcis clavier
+    - Divers
+  * Traduction de Cameraderie
+  * ProblŠmes et solutions
+    - Options de ligne de commandes
+  * Remerciements
+
+_______________________________________________________________________
+
+* Survol *
+_______________________________________________________________________
+
+  Cameraderie rend plus facile l'organisation de vos photographies
+  alors qu'elles sont toujours sur votre appareil photo. et encore
+  fraŒches dans votre esprit. Grƒce … sa fonction de groupe, le
+  renommage d'une photo. et son t‚l‚chargement vers un r‚pertoire
+  avec des images similaires ne n‚cessite plus que presque un clic
+  sur un bouton. 
+
+  Alors que Cameraderie offre des fonctionnalit‚s qui devraient
+  faciliter la sauvegarde de vos photo., il ne vous oblige pas …
+  toutes les utiliser. De la mˆme maniŠre, il propose un certain
+  nombre d'informations sur chaque image, mais ne vous oblige pas …
+  les voir. Dans la vue d‚taill‚e, vous pouvez cacher les colonnes qui
+  ne vous int‚ressent pas et les r‚arranger celles qui pr‚sentent pour
+  vous un int‚rˆt. 
+
+  Cameraderie prend en charge la plupart les appareils photo.
+  num‚riques (A.P.N. ou photoscopes) qui se connectent via USB ((v1.1
+  & v2.0). Il prend aussi en charge les cartes m‚moire flash utilis‚es
+  par ces appareils. Le programme est Open-Source et est distribu‚
+  sous licence Mozilla Public License; veuillez vous r‚f‚rer au
+  fichier "MPL-1.1.txt" pour le texte complet. Vous pouvez contacter
+  l'auteur, Rich Walsh, par courriel … <rich@e-vertise.com>. 
+
+  Remarque : Cameraderie n'a pas ‚t‚ con‡u comme un outil de
+  t‚l‚chargement des images en un clic. Si c'est ce que vous
+  recherchez, utilisez mon application en ligne de commandes "PTPro"
+  avec un script ou un objet Programme comportant les paramŠtres
+  appropri‚s. Les propri‚taires d'appareils vus comme des
+  p‚riph‚riques de stockage de masse ("Mass Storage Device" ou "MSD")
+  devraient s'orienter vers FotoGet/2 ou xcopy. 
+
+_______________________________________________________________________
+
+* Nouvelles fonctionnalit‚s de la v1.5 *
+_______________________________________________________________________
+
+  La premiŠre nouveaut‚ de Cameraderie est la prise en charge des
+  appareils de type p‚riph‚rique de stockage de masse ("Mass Storage
+  Device" ou MSD) et cartes m‚moires flsh. Si votre A.P.N. se
+  pr‚sente lui-mˆme comme unit‚ de disque amovible, ou si vous avez
+  la carte m‚moire d'un appareil et un lecteur de cartes, vous pouvez
+  … pr‚sent l'utiliser avec Cameraderie. 
+
+  Toutes les fonctionnalit‚s PTP originales de Cameraderie sont
+  disponibles : 
+    - un affichage unifi‚ qui vous permet de visualiser chaque photo
+      sur le mat‚riel dans une simple fenˆtre, soit sous forme de
+      vignettes ou sous forme de liste d‚taill‚e,
+    - fonctions flexibles de tri et de renommage de maniŠre … ce que
+      chaque photo. puisse ˆtre sauvegard‚e dans le r‚pertoire de
+      votre choix avec le nom que vous voulez,
+    - rotation automatique qui vous assure d'avoir des photo.
+      toujours affich‚es et sauvegard‚es … l'endroit. 
+
+  Pour une meilleure prise en charge des appareils de type MSD et des
+  cartes m‚moire, Cameraderie v1.5 propose : 
+    - une boŒte de dialogue Ouvrir pour commuter entre les appareils
+      de photo. et les cartes,
+    - le montage automatique des unit‚ de disques amovibles sur les
+      systŠmes avec LVM,
+    - la possibilit‚ d'ouvrir le programme sans s‚lectionner
+      d'appareil. 
+
+  Important : seules les unit‚s de disques amovibles USB qui
+              pr‚sentent un sous-r‚pertoire "DCIM" seront identifi‚s
+              comme "Appareils photo." MSD. Toutes les autres unit‚s
+              seront ignor‚es. 
+
+_______________________________________________________________________
+
+* Installation *
+_______________________________________________________________________
+
+  CAMERA.EXE   - peut ˆtre plac‚ dans n'importe quel r‚pertoire de
+                 votre choix. 
+
+  CAM_??.DLL   - si la bibliothŠque qui prend en charge de votre
+                 langue (i.e. CAM_FR.DLL) existe, placez-la dans le
+                 mˆme r‚pertoire que celui o— est situ‚ l'ex‚cutable; 
+                 vous pouvez supprimer les bibliothŠques dont vous
+                 n'avez pas besoin. 
+
+  CAMNLS       - si vous d‚sirez traduire Cameraderie dans une autre
+  (r‚pertoire)   langue, placez ce sous-r‚pertoire dans le r‚pertoire
+                 d'installation de Cameraderie. Sinon, vous pouvez le
+                 supprimer. 
+
+  USBCALLS.DLL - devrait ˆtre plac‚e soit dans le mˆme r‚pertoire que
+                 camera.exe ou un r‚pertoire figurant dans la variable
+                 d'environnement LIBPATH. 
+
+  USBRESMG.SYS - n‚cessaire uniquement dans le cas de l'utilisation
+                 d'un appareil de type PTP; placez ce dans x:\os2\boot
+                 et ajoutez la ligne suivante au fichier CONFIG.SYS :
+                    DEVICE=X:\OS2\BOOT\USBRESMG.SYS
+                 AprŠs avoir ajout‚ ou mis … jour USBRESMG.SYS, vous
+                 devez arrˆter et red‚marrer votre systŠme. 
+
+  IMPORTANT !    USBCALLS.DLL et USBRESMG.SYS sont appari‚s et
+                 _doivent_ provenir de la mˆme distribution. Vous
+                 pouvez utiliser tout version datant de juillet 2006
+                 ou plus r‚cent. 
+
+  Non incluse mais requise : 
+  LIBC061.DLL  - si vous ne l'avez pas d‚j…, vous pouvez l'obtenez
+                 depuis : 
+                   ftp://ftp.netlabs.org/pub/gcc/libc-0.6.1-csd1.zip
+                 Placez les 3 fichiers de l'archive dans un r‚pertoire
+                 qui doit figurer dans dans la variable
+                 d'environnement LIBPATH ‚tant donn‚ que plusieurs
+                 applications sont susceptibles d'utiliser cette DLL. 
+
+_______________________________________________________________________
+
+* D‚marrage et arrˆt *
+_______________________________________________________________________
+
+  D‚marrage
+  ---------
+  Branchez votre A.P.N. sur un port USB (v1.1 or v2.0) de votre
+  ordinateur, puis allumez-le et patientez quelques secondes avant de
+  lancer camera.exe. Cameraderie recherchera tout p‚riph‚rique
+  "ressemblant" … un appareil de photo. (i.e. tout appareil de type
+  PTP, et tout p‚riph‚rique amovible de stockage de masse pr‚sentant
+  un r‚pertoire "DCIM" … sa racine). Si LVM est install‚, Cameraderie
+  montera vos appareils de type MSD et vos cartes automatiquement. 
+
+  Lorsque Cameraderie trouve un appareil ou une carte, il commence …
+  charger vos clich‚s imm‚diatement. S'il trouve plus d'un appareil,
+  Cameraderie affiche alors une liste et vous demande de choisir. 
+  Lorsqu'il ne peut pas trouver de p‚riph‚rique appropri‚, une
+  boŒte de dialogue "Appareil non trouv‚" apparaŒt. Veuillez vous
+  assurer que votre photoscope est bien branch‚, attendez quelques
+  secondes de plus, puis appuyez sur "R‚essayer". 
+
+  Remarque : la premiŠre fois que vous utilisez Cameraderie, il vous
+  demandera d'entrer un r‚pertoire par d‚faut pour stocker vos
+  photographies. 
+
+  Arrˆt
+  -----
+  Si vous avez marqu‚ des fichiers pour le t‚l‚chargement ou la
+  suppression mais que vous n'avez pas encore effectu‚ ces tƒches,
+  Cameraderie vous demandera si vous voulez ou non sauvegarder votre
+  travail. Puis, s'il a d‚tect‚ des unit‚s amovibles ressemblant …
+  des A.P.N., Cameraderie vous demandera si vous voulez les ‚jecter. 
+  Pour ‚viter qu'il vous le demande … chaque fois, vous pouvez choisir
+  "toujours ‚jecter" ou "jamais ‚jecter" dans le menu "Options" ->
+  "Unit‚s amovibles". 
+
+  Remarque : il n'est pas n‚cessaire d'‚jecter explicitement un
+  appareil de type PTP - la fermeture du programme a le mˆme effet. 
+
+_______________________________________________________________________
+
+* L'affichage *
+_______________________________________________________________________
+
+  Liste des fichiers
+  ------------------
+  La liste des fichiers propose quatre vues : une vue d‚taill‚e et
+  trois vues "vignettes". Il affiche tous les fichiers pr‚sents sur
+  votre A.P.N., les photographies ainsi que les autres fichiers. 
+  Les dossiers que votre appareil cr‚e sont ignor‚s et ne sont pas
+  affich‚s. 
+
+  Alors que la disposition peut changer, chaque vue agit de la mˆme
+  maniŠre. Vous pouvez s‚lectionner une photographie ou plus, puis : 
+    * les marquer pour ˆtre t‚l‚charg‚es ou supprim‚es
+    * les assigner … un groupe
+    * les renommer
+    * cliquer avec le bouton 2 de la souris pour afficher un menu
+      contextuel
+
+  Vue d‚taill‚e : 
+  - Cette vue liste toutes les informations que votre appareil
+    fournit … propos de chaque fichier. La premiŠre colonne affiche
+    l'‚tat du fichier : marqu‚ pour le t‚l‚chargement ou la
+    suppression, ou d‚j… t‚l‚charg‚ (les fichiers supprim‚s sont
+    retir‚s de la liste de toutes fa‡ons). 
+
+  - Vous pouvez cacher toutes les colonnes, except‚e la premiŠre, et
+    vous pouvez modifier l'ordre dans lequel elles sont affich‚es
+    (s‚lectionnez "Affichage" -> "R‚organiser les colonnes" dans la
+    barre de menus). Vous pouvez aussi trier la liste en cliquant sur
+    l'entˆte d'une colonne, et redimensionner la largeur des colonnes
+    en glissant les lignes les s‚parant. 
+
+  Affichages des vignettes : 
+  - Ces vues affichent les vignettes cr‚‚es par votre appareil. La vue
+    "vignettes moyennes" affiche des images dans leur r‚solutions
+    natives (160x120). "Petites vignettes" r‚duit leur taille de 50%
+    (80x60) alors que "grandes vignettes" l'accroŒt de 50% (240x180). 
+
+  - L'‚tat et l'information sur le groupe d'un fichier apparaissent en
+    bas … gauche de l'image. Les informations suppl‚mentaires sur
+    la photographie s‚lectionn‚e (taille et date) apparaŒt dans la
+    barre lat‚rale. Remarque : ces informations peuvent ˆtre cach‚es
+    si la fenˆtre n'est pas assez large pour les afficher. 
+
+  Barre d'‚tat
+  ------------
+  Elle affiche le nombre total et la taille de toutes les photos sur
+  l'appareil, avec le nombre et la taille des fichiers marqu‚s pour le
+  t‚l‚chargement ou la suppression. Certains messages d'erreur peuvent
+  aussi apparaŒtre ici. 
+
+  Barre lat‚rale
+  --------------
+  Le haut de la barre lat‚rale affiche la vignette de la photographie
+  en cours de s‚lection. Cette vignette est cr‚‚e par l'A.P.N., pas
+  par le programme. Au-dessous, de part et d'autre, se trouvent les
+  boutons de rotation que vous pouvez utiliser pour r‚orienter une
+  vignette. 
+
+  Remarque : si l'option de "Rotation automatique … la sauvegarde" est
+  activ‚e (par d‚faut), vos photographies seront tourn‚es (si
+  n‚cessaire) pour correspondre … l'orientation de la vignette
+  lorsqu'elles seront t‚l‚charg‚es et sauvegard‚es. 
+
+  Le reste de la barre lat‚rale est occup‚ par les boutons de Groupes
+  (voir ci-dessous). Certains de ces boutons peuvent ˆtre  cach‚s si
+  la fenˆtre n'est pas assez haute pour tous les afficher. 
+
+_______________________________________________________________________
+
+* Les groupes *
+_______________________________________________________________________
+
+  Pas mal de clich‚s que nous prenons tombent dans les mˆme cat‚gories
+  g‚n‚riques et sont rang‚es avec les images corespondantes, comme
+  par exemple "Enfants", "Animaux", etc.. La fonction de groupes de
+  de Cameraderie exploite cette id‚e pour faciliter et acc‚lerer
+  l'organisation de vos images. Le premiŠre fois que vous utilisez
+  Cameraderie, il cr‚e 4 groupes. N'h‚sitez pas … les ‚diter ou les
+  supprimer et ajouter les groupes qui correspondent … vos besoins. 
+
+  L'utilisation est simple : cr‚ez un groupe (par exemple "Animaux")
+  et identifiez un r‚pertoire dans lequel ces photographies devront
+  ˆtre stock‚es (comme "f:\photos\animaux"). Si vous voulez, donnez
+  un masque de nom de fichier pour que les fichiers soient renomm‚s
+  lors de leur t‚l‚chargement sur disque (par exemple "Anim#" - #
+  ‚tant remplac‚ par un num‚ro de s‚rie). DŠs que vous rencontrerez
+  une photographie de votre animal pr‚f‚r‚, s‚lectionnez-la et appuyez
+  sur le bouton (ou le raccourcis clavier) du groupe "Animaux". 
+  L'image sera t‚l‚charg‚e et sauvegard‚e dans le r‚pertoire "animaux"
+  avec un nom du genre "Anim0074.jpg". 
+
+  Jusqu'… 10 groupes peuvent se voir assigner … un bouton sur la
+  fenˆtre principale, et tous les groupes peuvent ˆtre acc‚d‚s depuis
+  les menus contextuels des ‚l‚ments de la fenˆtre de la liste. Vous
+  pouvez r‚organiser l'ordre dans lequel les groupes apparaissent sur
+  les boutons et dans les menus de la fenˆtre de boŒte de dialogue des
+  groupes. Vous pouvez aussi assigner une touche de raccourcis clavier
+  … n'importe quel groupe. Veuillez vous r‚f‚rer … la section "Comment
+  faire pour... configurer les groupes" ci-desous pour obtenir plus de
+  d‚tails. 
+
+  L'assignation d'une image … un groupe ne vous empˆche pas de le
+  renommer manuellement. La photgraphie sera t‚l‚charg‚e et
+  sauvegard‚e dans le r‚pertoire correspondant … ce groupe en
+  utilisant le nom que vous lui aurez choisi. En fait, le nom que vous
+  assignez manuellement est en r‚alit‚ un modŠle, vous pouvez donc
+  utiliser "#" pour lui donner un num‚ro de s‚rie. 
+
+_______________________________________________________________________
+
+* Comment faire pour... *
+_______________________________________________________________________
+
+  Marquer & d‚marquer des photo. 
+  ------------------------------
+  S‚lectionnez une ou plusieurs photographies, puis utiliser l'un des
+  ‚l‚ments suivants : 
+
+  Boutons de groupe : cliquer sur l'un des boutons de groupe, except‚
+    le bouton "D‚faut", assignera … la fois le(s) clich‚(s) … un
+    groupe et le(s) marquera pour le t‚l‚chargement. Cliquer sur
+    "D‚faut" d‚marquera le(s) clich‚(s) et le(s) retirera du groupe
+    dans lequel il(s) ‚tai(en)t. 
+
+  Clavier : les touches 'Entr‚e' and 'Suppr' sont des commutateurs qui
+    marqueront et d‚marqueront le(s) clich‚(s) pour le t‚l‚chargement
+    ou la suppression respectivement, sans modification du groupe. Si
+    vous avez d‚fini des touches de raccourcis … vos groupes, vous
+    pouvez y assigner les photographies (mˆme s'il n'y a pas de
+    bouton) en maintenant la touche "Ctrl" appuy‚e et en tapant la
+    touche choisie pour le groupe voulu. La touche de raccourcis pour
+    le groupe "D‚faut" est Ctrl-RetArriŠre. 
+
+  Menu contextuel : cliquez avec le bouton 2 de la souris sur un
+    clich‚ et s‚lectionnez "T‚l‚charger", "Supprimer" ou
+    "D‚s‚lectionner". S'il y a plus d'une photographie s‚lectionn‚e,
+    toutes seront param‚tr‚es au mˆme ‚tat. Autrement, utilisez le
+    sous-menu "Groupes" pour assigner le(s) clich‚(s) … l'un des
+    groupes - y compris ceux qui ne sont pas attribu‚s … l'un des
+    boutons de groupes. 
+
+
+  Renommer des photo.
+  -------------------
+  De maniŠre automatique : lorsque vous assignez des clich‚s … un
+    groupe, le masque de nom de fichier pour ce groupe est utilis‚
+    pour renommer le fichier lorsqu'il est t‚l‚charg‚ sur le disque. 
+    Le masque peut inclure "*" pour copier le nom ou l'extension
+    d'origine, et un "#" pour ins‚rer un num‚ro de s‚rie. Il peut
+    aussi inclure les m‚tacaractŠres d‚pendant de la langue ins‚rant
+    tout ou partie de la date de la photographie. 
+
+  Manuellement : assigner des clich‚s … un groupe _ne_ vous emˆche
+    _pas_ de les renommer manuellement. Le nom que vous entrez sera
+    utilis‚ comme modŠle, et vous pouvez donc y inclure "*" et "#" si
+    vous le d‚sirez. 
+
+    Pour renommer simplement une image, maintenez la touche Alt
+    appuy‚e et cliquez sur son titre. Lorsque vous avez termin‚,
+    appuyez sur la touche "Entr" du pav‚ num‚rique ou cliquez
+    ailleurs. 
+
+    Pour renommer plusieurs images, s‚lectionnez-les, puis maintenez
+    la touche Alt appuy‚e et cliquez sur l'un des titres des fichiers
+    s‚lectionn‚s. Lorsque vous avez termin‚, le mˆme nom sera appliqu‚
+    … tous ces fichiers. Si vous n'aviez pas inclu le caractŠre de
+    num‚ro de s‚quence ("#"), Cameraderie en apposera un. 
+
+  D‚faire : pour restaurer le nom original de toute photographie que
+    vous avez renomm‚e manuellement, affichez son menu contextuel et
+    s‚lectionnez "D‚faire le titre". 
+
+
+  D‚finir les r‚pertoires de sauvegarde
+  -------------------------------------
+  De maniŠre automatique : tous les clich‚s appartenants … un groupe
+    sont plac‚s dans le r‚pertoire sp‚cifi‚ pour ce groupe. Si vous
+    n'avez pas assign‚ d'image … un groupe particulier, elle
+    appartient au groupe "D‚faut" et est t‚l‚charg‚e et sauvegard‚e
+    dans le r‚pertoire de ce groupe. Vous pouvez soit sp‚cifier un
+    r‚pertoire particulier (comme "f:\photos\animaux") ou soit faire
+    en sorte que Cameraderie cr‚e automatiquement des r‚pertoires
+    bas‚s sur la date de chaque clich‚. Utilisez le bouton "diter les
+    groupes" pour modifier le chemin de l'un de ces groupes. 
+
+  Manuellement : lorsque vous renommez une image, vous pouvez aussi
+    entrer le chemin vers lequel Cameraderie devra le t‚l‚charger. 
+    Le chemin peut ˆtre "absolu" ou "relatif" (i.e. utilisant ".\" ou
+    "..\"), et peut contenir des m‚tacaractŠres pour, par exemple,
+    cr‚er des r‚pertoires bas‚s sur la date des photographies. 
+
+
+  Sauvegarder votre travail
+  -------------------------
+  Vous pouvez sauvegarder et/ou supprimer les fichiers marqu‚s …
+  n'importe quel moment en s‚lectionnant "Fichier" -> "T‚l‚charger
+  imm‚diatement" depuis la barre de menus. Si l'un des fichiers reste
+  marqu‚ lorsque vous fermez Cameraderie, il vous demandera si vous
+  voulez sauvegarder votre travail. Dans tous les cas, vous pouvez
+  choisir de t‚l‚charger, de supprimer ou les deux. 
+
+  La boŒte de dialogue d'enregistrement des modifications vous permet
+  de choisir de supprimer automatiquement les photographies aprŠs
+  qu'elles ont ‚t‚ t‚l‚charg‚es et sauvegard‚es ou de les marquer pour
+  ˆtre supprim‚es plus tard. La plupart des erreurs qui surviennent au
+  t‚l‚chargement de vos clich‚s (comme pour un chemin incorrect) peut
+  ˆtre corrig‚e depuis la boŒte de dialogue de sauvegarde. 
+
+  Remarque : Cameraderie retrie la liste des fichiers selon leurs
+  dates et heures lorsqu'il les t‚l‚charge et restaure l'ordre de tri
+  original lorsqu'il a termin‚. cela permet de s'assurer que les
+  num‚ros de s‚rie sont assign‚s dans l'ordre chronologique. 
+
+
+  Utilisation de multiples appareils
+  ----------------------------------
+  Pour changer d'appareil ou de carte m‚moire utilis‚, s‚lectionnez
+  "Fichier" -> "Ouvrir..." depuis la barre de menus. Si vous n'avez
+  pas sauvegard‚ votre travail, il vous sera d'abord demand‚ de le
+  faire. La boŒte de dialogue de s‚lection d'un appareil qui apparaŒt
+  listera tous les A.P.N. et cartes m‚moires disponibles. Si celui
+  que vous voulez apparaŒt, s‚lectionnez-le puis appuyez sur
+  "Ouvrir". Si vous changez d'avis et vous ne voulez plus changer
+  d'appareil, appuyez juste sur "Annuler". 
+
+  Si vous ne pouvez avoir qu'un seul appareil ou carte connect‚ … la
+  fois, s‚lectionnez le p‚riph‚rique en cours, puis appuyez sur le
+  bouton d'‚jection (celui avec le triangle). D‚branchez le mat‚riel
+  que vous avez ‚ject‚, connectez le nouveau, puis appuyez sur
+  "R‚essayer". Le nouvel appareil ou la carte devrait apparaŒtre dans
+  la liste. 
+
+  Remarque : vous _devez_ appuyer sur le bouton d'‚jection avant
+  de d‚brancher les p‚riph‚riques qu'ils soient de type stockage de
+  masse ou PTP. AprŠs avoir ‚ject‚ l'appareil en cours, Cameraderie
+  abandonnera toutes les donn‚es de ce p‚riph‚rique, mˆme si vous
+  appuyez sur "Annuler". 
+
+
+  Configurer les groupes
+  ----------------------
+  Pour commencer, appuez sur le bouton "diter les groupes". Les
+  modifications faites sur les paramŠtres d'un groupe seront
+  sauvegard‚es en s‚lectionnant un autre groupe ou en appuyant sur
+  le bouton "Appliquer". Toutes les autres modifications prendront
+  effet imm‚diatement. La boŒte de dialogue des groupes contient ces
+  ‚l‚ments : 
+
+  Liste des groupes : affiche tous les groupes en cours plus les
+    groupes que vous avez supprim‚s. S‚lectionnez un ‚l‚ment pour
+    l'‚diter ou le supprimer. Cochez-le pour l'assigner … un bouton
+    de la barre lat‚rale; jusqu'… 10 groupes peuvent ˆtre assign‚s …
+    des boutons. 
+
+  Boutons Haut et Bas : modifie l'ordre dans lequel les groupes sont
+    affich‚s sur les boutons et dans les menus. Toute modification se
+    fait "en direct" et vous pouvez donc voir les boutons r‚arrang‚s
+    alors que vous d‚placez un ‚l‚ment vers le haut ou vers le bas
+    dans la liste. Les raccourcis clavier pour ces boutons sont
+    Alt+Haut et Alt+Bas. 
+    Remarque : le groupe "D‚faut" en haut de la liste ne peut pas ˆtre
+    d‚plac‚. 
+
+  Nom du groupe : n'importe quel nom de votre choix (31 caractŠres
+    maximum), du moment qu'il ne fasse pas doublon avec celui d'un
+    autre groupe. Pour param‚trer une touche de raccourcis pour ce
+    groupe, placez un tilde ("~") avant la lettre du mot que vous
+    voulez utiliser. Cette lettre sera soulign‚e sur les boutons et
+    les menus. Par exemple, pour un groupe nom‚ "~Chats", Ctrl-C en
+    sera la touche de raccourcis. 
+    Remarque : la touche de raccourcis pour le groupe "D‚faut" est
+    Ctrl-RetourArriŠre. 
+
+  Sauvegarder dans le r‚pertoire : le r‚pertoire utilis‚ pour stocker
+    les photographies de ce groupe. Tapez un chemin ou appuyez sur le
+    bouton "Parcourir" pour en s‚lectionner … l'aide d'une boŒte de
+    dialogue de fichiers. Si ce champ est laiss‚ vide, les clich‚s
+    iront dans le r‚pertoire en cours. Cr‚ez des r‚pertoires …
+    quelque niveau de "profondeur" que ce soit en le tapant et en
+    apuyant sur le bouton "Cr‚er", ou en ajoutant un (des) nom(s) de
+    r‚pertoire nouveaux au chemin affich‚ dans la boŒte de dialogue
+    de recherche. 
+
+    Pour stocker vos clich‚s par date, incluez les m‚tacaractŠres dans
+    le chemin : %a (ann‚e), %m (mois) et %j (jour). Cameraderie cr‚era
+    automatiquement jusqu'… 3 niveaux de sous-r‚pertoires bas‚s sur la
+    date de chaque image. Par exemple : "f:\photos\%a%m" ou
+    "f:\photos\%a\%m\%j". Pour ‚viter … Cameraderie de prendre un "%"
+    dans un chemin de fichier comme faisant partie d'un m‚tacaractŠre,
+    entrez "%%", le second "%" sera ignor‚. 
+
+    Remarque : les lettres de date sont d‚pendantes de la langue et
+    correspondent … la premiŠre lettre des mots pour "ann‚e", "mois"
+    et "jour" (par exemple, en allemand les lettres seraient %j %m et
+    %t). 
+
+    Cameraderie valide le chemin d'un ‚l‚ment lorsque vous
+    s‚lectionnez un autre ‚l‚ment ou appuyez sur le bouton
+    "Appliquer". Il valide aussi tous les chemins au lancement. Si il
+    trouve une erreur au d‚marrage, le texte du bouton "diter les
+    groupes" sera affich‚ en rouge. 
+
+    Remarque : lorsque Cameraderie n'est *pas* en cours d'ex‚cution,
+    vous pouvez toujours d‚placer ou renommer les r‚pertoires qu'il
+    utilise. Au d‚marrage, il utilisera le systŠme de localisation des
+    fichiers du WPS pour les localiser. 
+
+  Masque de nom de fichier : contient le motif … utiliser pour
+    renommer automatiquement les fichiers au moment o— ils sont
+    sauvegard‚s sur le disque. Vous pouvez passer outre ce modŠle
+    en renommant des photographies individuellement. Pour pr‚server
+    le nom donn‚ par l'appareil, laissez ce champ vide. 
+
+    Les modŠles peuvent pr‚senter plusieurs m‚tacaractŠres : "#"
+    insŠre un num‚ro de s‚rie dans le nom pour s'assurer qu'il est
+    unique; "*" copie soit le nom original de la photographie, soit
+    son extension selon l… o— il est utilis‚. Si vous ne placez pas
+    l'un de ces caractŠres, un "#" sera ajout‚ automatiquement. Vous
+    pouvez aussi placer les m‚tacaractŠres de date (%a %m %j) d‚crits
+    ci-dessus pour inclure tout ou partie de la date du fichier dans
+    son nom. 
+
+    Lorsque vous cr‚ez un modŠle, n'incluez pas d'extension … moins de
+    vouloir explicitement la modifier. Cameraderie copiera l'extension
+    du fichier original. 
+    
+  Nø s‚rie : le nombre qui remplacera le m‚tacaractŠre "#" dans un
+    masque de nom de fichier d'un groupe. Le nombre est incr‚ment‚
+    aprŠs chaque utilisation et est sauvegard‚ de session en session. 
+    Il sera aussi utilis‚ si vous renommez individuellement des
+    photographies et incluez un "#". 
+
+  Chiffres : indique le nombre minimum de chiffres dans un num‚ro de
+    s‚rie. Par exemple, si le num‚ro de s‚rie est "57" et que le
+    nombre de chiffres est "4", Cameraderie insŠrera donc "0057". Cela
+    permet de s'assurer que les fichiers tri‚s par ordre alphab‚tique
+    apparaŒtront dans le bon ordre. 
+
+  Bouton Nouveau : insŠre un nouveau groupe aprŠs l'‚l‚ment en cours
+    de s‚lection. Le nom par d‚faut est "Nouveau groupe 1"; son
+    r‚pertoire de sauvegarde est copi‚ depuis le groupe "D‚faut". 
+    ditez le nouveau groupe en fonction de vos besoins. 
+
+  Bouton Supprimer : marque un groupe pour la suppression mais ne le
+    supprime pas complŠtement tant que vous ne quittez pas le
+    programme. Les groupes supprim‚s sont plac‚s en bas de la liste
+    et sont d‚sactiv‚s. Lorsque l'un d'entre eux est s‚lectionn‚,
+    votre seule option est d'appuyer sur le bouton "Recouvrir" pour
+    restaurer le groupe. 
+
+  Bouton D‚faire : annule toutes les modifications effectu‚es depuis
+    que vous avez s‚lectionn‚ un ‚l‚ment. AprŠs avoir s‚lectionn‚
+    un autre ‚l‚ment, vous ne pouvez plus annuler les modifications
+    effectu‚es pr‚c‚demment. 
+
+  Bouton Appliquer : seulement requis lorsque vous voulez valider les
+    modifications que vous avez effectu‚es sans s‚lectionner un autre
+    ‚l‚ment. 
+
+
+  Raccourcis clavier
+  ------------------
+  Les raccourcis clavier que vous assignez aux groupes sont activ‚s
+  en maintenant la touche "Ctrl" appuy‚e et en tapant sur la lettre
+  que vous avez s‚lectionn‚e. Toutes les autres touches de raccourcis
+  utilisent la touche "Alt". Voici quelques uns des raccourcis clavier
+  les moins ‚vidents : 
+
+  Fenˆtre principale : 
+  - Groupe "D‚faut"                                 Ctrl+RetArriŠre
+  - Rotation vers la gauche (anti-horaire)          Alt+FlŠche gauche
+  - Rotation vers la droite (sens horaire)          Alt+FlŠche droite
+
+  Fenˆtres de groupes et de colonnes : 
+  - D‚placer un ‚l‚ment vers le haut dans la liste  Alt+FlŠche haut
+  - D‚placer un ‚l‚ment vers le bas dans la liste   Alt+FlŠche bas
+
+
+  Divers
+  ------
+  D‚s‚lectionner les fichiers sauvegard‚s : lorsque Cameraderie
+    t‚l‚charge un fichier sans le supprimer, le programme fait
+    apparaŒtre des hachures dans la colonne d'‚tat et vous empˆche de
+    le t‚l‚charger … nouveau. Pour passer outre ce comportement,
+    affichez le menu contextuel, puis cliquez sur "D‚s‚lectionner"
+    tout en maintenant la touche "Ctrl" appuy‚e. Cela retirera les
+    hachures et vous permettra de t‚l‚charger et sauvegarder l'image …
+    nouveau. 
+
+  Options de rotation : ces deux options sont activ‚es par d‚faut : 
+    Rotation automatique des vignettes : Cameraderie lira les donn‚es
+      EXIF des photographies en taille originales et les utilisera
+      pour orienter la vignette correctement. Notez qu'il arrive
+      parfois que ces donn‚es sont erron‚es; en particulier parceque
+      beaucoup d'A.P.N. ne peuvent pas d‚tecter qu'ils sont plac‚s …
+      l'envers. 
+    Rotation des photo. … la sauvegarde : Cameraderie utilisera
+      l'algorithme de "rotation JPEG sans perte" pour r‚orienter une
+      photo. de maniŠre … ce qu'elle corresponde … la vignette. Il
+      mettra aussi … jour les donn‚es EXIF de l'image sauvegard‚e pour
+      indiquer qu'elle est … pr‚sent orient‚e correctement. 
+
+  ParamŠtres par d‚faut : pour retirer toutes vos personnalisations
+    _except‚s_ les groupes que vous avez cr‚‚s, depuis la barre des
+    menus, s‚lectionnez "Options" -> "ParamŠtres par d‚faut en
+    quittant", puis relancez le programme. Cela r‚initialisera les
+    couleurs, les polices, les tailles et positions des fenˆtres,
+    l'ordre des colonnes et l'affichage de celles-ci. 
+
+  Mode D‚mo : pour ouvrir Cameraderie sans charger de photo.,
+    d‚branchez tous les A.P.N. ou les cartes m‚moires, puis lancez
+    l'application. Lorsque la boŒte de dialogue "Appareil non trouv‚"
+    apparaŒt, s‚lectionnez "[Pas d'appareil]", puis appuyez sur le
+    bouton "Ouvrir". Ou encore, vous pouvez utiliser l'option de ligne
+    de commandes "demo" (voir la section "ProblŠmes et solutions" plus
+    bas). 
+
+_______________________________________________________________________
+
+* Traduction de Cameraderie *
+_______________________________________________________________________
+
+  Cr‚er une version de Cameraderie pour votre langue est trŠs
+  facile. Tout ce dont vous avez besoin est d‚j… install‚ sur votre
+  systŠme : 
+
+  - ditez le fichier 'camnls\cam_xx.txt' et traduisez dans votre
+    langue les chaŒnes de caractŠres entre guillemets. Pour plus de
+    d‚tails, veuillez vous r‚f‚rer aux instructions figurant en
+    haut de ce fichier. 
+
+  - Lancez 'cam_xx.cmd' depuis la ligne de commandes en lui
+    fournissant en paramŠtre le code … deux lettres de votre langue. 
+    Par exemple "cam_xx FR" pour le fran‡ais, ou "cam_xx NL" pour le
+    n‚erlandais. 
+
+  - Si tout se passe bien, cam_xx.cmd cr‚era une nouvelle DLL qui
+    identifie la langue (par exemple cam_FR.dll ou cam_NL.dll) et la
+    d‚placera dand le r‚pertoire principal de Cameraderie. 
+
+  - R‚ouvrez Cameraderie pour voir le r‚sultat. Vous pouvez relancer
+    cam_xx.cmd autant de fois que vous le d‚sirez - il cr‚era une
+    nouvelle DLL … chaque fois. 
+
+  - Si vous voulez partager votre travail avec d'autres utilisateurs,
+    veuillez m'envoyer par courriel votre version traduite de 
+    cam_xx.txt (pas la DLL !). 
+    Envoyez-la … : "Rich Walsh" <rich@e-vertise.com>
+
+  Remarque : Cameraderie utilise la variable d'environnement 'LANG'
+  pour identifier quelle DLL de langue il doit utiliser. Pour utiliser
+  une langue diff‚rente de celle identifi‚e dans le fichier
+  CONFIG.SYS, asignez une nouvelle valeur … cette variable avant de
+  r‚ouvrir Cameraderie.
+
+  La plupart des utilisateurs de Warp v4.5 (MCP, eCS, etc.) peuvent
+  param‚trer cette valeur depuis le bloc-notes des paramŠtres WPS de
+  l'objet Cameraderie. Ouvrez-le … l'onglet "Langue", puis
+  s‚lectionnez la langue appropri‚e depuis la liste nomm‚e "R‚gion". 
+
+_______________________________________________________________________
+
+* ProblŠmes et solutions *
+_______________________________________________________________________
+
+  ProblŠme connu
+  --------------
+  Les propri‚taires de certains appareils PTP peuvent s'attendre …
+  des problŠmes … l'utilisation de Cameraderie pour supprimer des
+  images de l'appareil. Ils devront peut-ˆtre relancer le programme
+  et/ou ‚teindre et rallumer l'A.P.N. pour effacer les erreurs. 
+
+
+  ProblŠmes et solutions
+  ----------------------
+  La plupart des problŠmes report‚s par les utilisateurs impliquent
+  l'USB. Il peut s'av‚rer difficile de dire si la cause provient de
+  votre appareil, de votre mat‚riel USB (y compris le cƒble utilis‚),
+  ou vos pilotes. Cela peut venir de Cameraderie lui-mˆme, mais,
+  honnˆtement, ce n'est en g‚n‚ral pas le cas. Voici quelques
+  suggestions qui peuvent aider : 
+
+    - installez les derniers pilotes USB d'IBM (v10.162),
+    - remplacez votre cƒble USB avec un autre qui soit certifi‚
+      USB 2.0,
+    - connectez votre appareil directement sur l'ordinateur plut“t
+      qu'… travers un concentrateur,
+    - si votre appareil prend en charge le PTP et le mode stockage de
+      masse (MSD), faites l'assai avec les deux modes,
+    - faites correspondre la version USB de l'appareil avec celle du
+      port USB de votre ordinateur (i.e. branchez un A.P.N. USB 1.1
+      sur un port USB 1.1) - un fabricant avoue que certains de ses
+      appareils USB 1.1 n'est pas fiable s'il est branch‚ sur un port
+      USB 2.0,
+    - pour les appareils USB 2.0 qui doivent ˆtre connect‚s sur des
+      ports USB 1.1, certains (comme Canon) pr‚sentent une option
+      pour ralentir la connexion USB,
+    - remplacez votre carte USB ; les cartes mŠres avec jeu de puces
+      Intek & Via utiliseront USBUHCD.SYS qui semble plus fiable que
+      USBOHCD.SYS,
+    - utilisez tout ceci comme une excuse pour remplacer votre
+      appareil par un neuf. 
+
+  De loin, le problŠme le plus commun pour les propri‚taires
+  d'appareils PTP est la boite de dialogue "Initialisation de
+  l'appareil photo. impossible". Cela est presque tout le temps d–
+  … des versions de USBCALLS.DLL et USBRESMG.SYS qui ne correspondent
+  pas. Les deux fichiers doivent provenir de la mˆme de la mˆme
+  distribution - toute paire datant de juillet 2006 ou plus r‚cente
+  devrait fonctionner. Si vous d‚placez USBCALLS.DLL hors du
+  r‚pertoire de Cameraderie, assurez-vous que le systŠme trouve la
+  copie appropri‚e - il peut y avoir d'autres versions install‚es et
+  que vous ignoriez (par exemple dans \ecs\dll). La fenˆtre de console
+  d‚crite ci-dessous affichera le chemin complet de la bibliothŠque
+  utilis‚e par Cameraderie. 
+
+  Pour les problŠmes d'affichage (par exemple aucune vignette
+  affich‚e, fenˆtres non dimesionn‚es correctement, la barre de titre
+  des colonnes n'apparaŒt pas dans la vue d‚taill‚e, etc.),
+  s‚lectionnez "Options" -> "ParamŠtres par d‚faut en quittant", puis
+  relancez le programme. Vous pouvez aussi utiliser l'option de
+  ligne de commandes "reset" (voir plus bas). 
+
+  Pour d'autres problŠmes … l'utilisation de Cameraderie, ouvrez une
+  fenˆtre OS/2, allez dans le r‚pertoire de Cameraderie, puis
+  lancez-le en utilisant cette commande : 
+    start /n /win camera
+  En plus de la fenˆtre habituelle, apparaŒtra une fenˆtre de
+  "console" contenant les messages de debugage. AprŠs avoir recr‚‚ le
+  problŠme, copiez le contenu de cette fenˆtre dans le presse-papiers
+  et collez-le dans un courriel. D‚crivez le problŠme et ce qui l'a
+  caus‚, puis envoyez votre rapport … 
+  "Rich Walsh" <rich@e-vertise.com>
+
+
+  Options de ligne de commandes
+  -----------------------------
+  Des options de ligne de commandes existent pour corriger des
+  problŠmes sp‚cifiques de quelques personnes. Ne les utilisez pas …
+  moins que ce soit la seule fa‡on de faire fonctionner Cameraderie
+  correctement ! Entrez-les en ligne de commandes sans les
+  guillemets. 
+
+  "demo" : Cameraderie ne recherchera pas d'appareils PTP ou de
+    p‚riph‚riques de stockage de masse, et ouvrira une fenˆtre vide. 
+    Les modifications du design de Cameraderie et les nouvelles
+    options de ligne de commandes rendent largement cette option
+    inutile. 
+
+  "reset" : corrige la plupart des problŠmes li‚s … l'affichage (par
+    exemple les boŒtes de diaolgue invisibles, ou de tailles
+    incorrectes). Cela r‚initialise les couleurs, les polices, les
+    taille et position de la fenˆtre, l'ordre et l'affichage des
+    colonnes. La s‚lection de "Options" ->  "ParamŠtres par d‚faut en
+    quittant" depuis la barre de menus a le mˆme effet. L'option
+    empˆche Cameraderie de monter automatiquement les unit‚s (voir
+    "nolvm", ci-dessous). 
+
+  "nolvm" : empˆche Cameraderie d'utiliser LVM pour la "d‚couverte" et
+    le montage des p‚riph‚riques de staockage de masse comme unit‚s de
+    disque. Utilisez-la si vous rencontrez fr‚quemment une boŒte de
+    dialogue disant que LVM s'est plant‚ (la d‚connexion des unit‚s
+    que vous avez d‚j… ‚ject‚es ‚vitent en g‚n‚ral une telle chose). 
+    D‚cocher "Montage autoimatique des unit‚s" dans le menu "Options"
+    -> "Unit‚s amovibles" ou sur la boŒte de dialogue d'ouverture a le
+    mˆme effet. 
+
+  "force" : essayez-la si vous pensez que votre A.P.N. prend en charge
+    le protocole PTP alors que Cameraderie dit qu'aucun appareil n'a
+    ‚t‚ trouv‚. Cette option l'oblige … traiter tout p‚riph‚rique USB
+    comme un p‚riph‚rique PTP. Cela ne fonctionne qu'avec un petit
+    nombre d'appareils num‚riques plus anciens et peut empˆcher
+    d'autres p‚riph‚riques de fonctionner jusqu'… ce que vous les
+    ‚teigniez et rallumiez. 
+
+  "dave" : cela corrigeait un problŠme que Dave M. avait - il peut ne
+    pas en corriger d'autres. Il est utile uniquement si la barre
+    d'‚tat en bas de la fenˆtre affiche "Erreur lors de
+    l'‚tablissement de la liste des fichiers". AprŠs que Dave ait
+    sauvegard‚ ses photographies, il a reformat‚ … la fois sa carte
+    m‚moire et la m‚moire interne de son appareil. Depuis, il n'a
+    plus eu besoin d'utiliser ce correctif. Cela suggŠre donc que
+    le reformatage puisse ˆtre la meilleure solution. 
+
+_______________________________________________________________________
+
+* Remerciements *
+_______________________________________________________________________
+
+  La majeure partie de Cameraderie est un travail original de Richard
+  L. Walsh et est un (C) Copyright 2006, 2007  R L Walsh. Il est
+  distribu‚ sous licence publique Mozilla (Mozilla Public License ou
+  MPL). 
+
+  Cependant, Cameraderie incorpore les travaux d'autres auteurs, bien
+  que modifi‚s pour correspondre aux besoins d'OS/2 et aux choix
+  de cet auteur. Par extension, permise par les licences des auteurs
+  d'origine, ces modifications sont aussi distribu‚s sous licence
+  MPL. 
+
+    LIBUSB   - Copyright (C) 2000-2003 Johannes Erdfelt
+               Diffus‚ sous licence Gnu Lesser Public License
+
+    LIBJPEG  - Copyright (C) 1991-1998 Thomas G. Lane
+               Ce logiciel est bas‚ en partie sur le travail du
+               groupe ind‚pendant JPEG. 
+
+  Je voudrais aussi reconnaŒtre le travail de Mariusz Woloszyn,
+  auteur de LIBPTP, qui m'a donn‚ de comprendre comment le PTP
+  fonctionne et comment ‚crire une interface am‚lior‚e pour le
+  Protocole de Transfert d'Images. 
+
+_______________________________________________________________________
+_______________________________________________________________________
+
+  Rich Walsh <rich@e-vertise.com>
+  Fort Myers, Floride
+
+  4 mai 2007
+
+  Traduction fran‡aise du 1er mai 2007
+  par Guillaume Gay <GuillaumeGay@bigfoot.com>
+
+_______________________________________________________________________
+_______________________________________________________________________
+
