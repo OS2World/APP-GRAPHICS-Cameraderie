@@ -1,0 +1,507 @@
+/****************************************************************************/
+// camapp.dlg
+//
+//  - all windows displayed by the app are dialogs
+//
+/****************************************************************************/
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Cameraderie.
+ *
+ * The Initial Developer of the Original Code is Richard L. Walsh.
+ * 
+ * Portions created by the Initial Developer are Copyright (C) 2006,2007
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/****************************************************************************/
+
+#ifndef OS2_INCLUDED
+   #include <os2.h>
+#endif
+
+
+DLGTEMPLATE IDD_MAIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_MAIN, 64, 30, 518, 200,
+            NOT FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE | NOT WS_SAVEBITS,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_MINBUTTON |
+            FCF_MAXBUTTON | FCF_TASKLIST
+            PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        CONTAINER       FID_CLIENT, 132, 11, 386, 189,
+                        CCS_EXTENDSEL | CCS_MINIICONS |
+                        CCS_AUTOPOSITION | CCS_NOCONTROLPTR
+                        PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+        LTEXT           "", IDC_SIDEBAR, 0, 11, 132, 174
+        BEGIN
+            PUSHBUTTON      IDB_ROTCCBMP_NBR, IDC_ROTCC, 2, 90, 11, 8,
+                            BS_BITMAP | NOT BS_TEXT | BS_NOPOINTERFOCUS |
+                            BS_NOBORDER | WS_GROUP | NOT WS_TABSTOP
+                            PRESPARAMS PP_BACKGROUNDCOLOR, 0x007F7F7FL
+            PUSHBUTTON      IDB_ROTCWBMP_NBR, IDC_ROTCW, 117, 90, 11, 8,
+                            BS_BITMAP | NOT BS_TEXT | BS_NOPOINTERFOCUS |
+                            BS_NOBORDER | NOT WS_TABSTOP
+                            PRESPARAMS PP_BACKGROUNDCOLOR, 0x007F7F7FL
+            LTEXT           "", IDC_BMP, 0, 87, 132, 87, WS_CLIPSIBLINGS
+                            PRESPARAMS PP_BACKGROUNDCOLOR, 0x007F7F7FL
+            CTEXT           "", IDC_TITLE, 0, 76, 132, 11
+                            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FFFFFFL
+                            PRESPARAMS PP_BACKGROUNDCOLOR, 0x007F7F7FL
+            LTEXT           "", IDC_INFO, 6, 76, 126, 0, DT_WORDBREAK
+                            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PUSHBUTTON      "",        IDC_EDITGRP,      0, 56, 64, 13, WS_GROUP | BS_NOPOINTERFOCUS
+            PUSHBUTTON      "",        IDC_GRPFIRST+0,  65, 56, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group1",  IDC_GRPFIRST+1,   0, 37, 64, 13, WS_GROUP | BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group2",  IDC_GRPFIRST+2,  65, 37, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group3",  IDC_GRPFIRST+3,   0, 23, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group4",  IDC_GRPFIRST+4,  65, 23, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group5",  IDC_GRPFIRST+5,   0,  9, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group6",  IDC_GRPFIRST+6,  65,  9, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group7",  IDC_GRPFIRST+7,   0, -5, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group8",  IDC_GRPFIRST+8,  65, -5, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group9",  IDC_GRPFIRST+9,   0,-19, 64, 13, BS_NOPOINTERFOCUS
+            PUSHBUTTON      "Group10", IDC_GRPFIRST+10, 65,-19, 64, 13, BS_NOPOINTERFOCUS
+        END
+
+        LTEXT           "", IDC_STATUS, 0, 0, 518, 11, DT_VCENTER
+                        PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    END
+END
+
+
+DLGTEMPLATE IDD_SAVE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_SAVE, 43, 13, 216, 132, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        CTEXT           "", IDC_SAVECHGS, 0, 116, 216, 10, 
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        GROUPBOX        "", -1, 4, 59, 208, 56
+        ICON            IDI_SAVICO, IDI_SAVICO, 14, 91, 21, 16
+        AUTOCHECKBOX    "", IDC_SAVENOW, 42, 94, 164, 10
+        AUTORADIOBUTTON "", IDC_SAVEAFTER, 54, 83, 144, 10, WS_TABSTOP
+        AUTORADIOBUTTON "", IDC_SAVELATER, 54, 73, 144, 10, WS_TABSTOP
+        AUTORADIOBUTTON "", IDC_SAVEDONT, 54, 63, 144, 10, WS_TABSTOP
+        GROUPBOX        "", -1, 4, 30, 208, 28
+        ICON            IDI_DELICO, IDI_DELICO, 14, 34, 21, 16
+        AUTOCHECKBOX    "", IDC_ERASENOW, 42, 37, 164, 10
+
+        DEFPUSHBUTTON   "", IDC_YES, 57, 6, 48, 13, WS_GROUP
+        PUSHBUTTON      "", IDC_NO, 111, 6, 48, 13
+    END
+END
+
+
+DLGTEMPLATE IDD_SAVEEXIT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_SAVEEXIT, 43, 13, 216, 132, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        CTEXT           "", IDC_SAVECHGS, 0, 116, 216, 10, 
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        GROUPBOX        "", -1, 4, 59, 208, 56
+        ICON            IDI_SAVICO, IDI_SAVICO, 14, 91, 21, 16
+        AUTOCHECKBOX    "", IDC_SAVENOW, 42, 94, 164, 10
+        AUTORADIOBUTTON "", IDC_SAVEAFTER, 54, 83, 144, 10, WS_TABSTOP
+        AUTORADIOBUTTON "", IDC_SAVELATER, 54, 73, 144, 10, WS_TABSTOP
+        AUTORADIOBUTTON "", IDC_SAVEDONT, 54, 63, 144, 10, WS_TABSTOP
+        GROUPBOX        "", -1, 4, 30, 208, 28
+        ICON            IDI_DELICO, IDI_DELICO, 14, 34, 21, 16
+        AUTOCHECKBOX    "", IDC_ERASENOW, 42, 37, 164, 10
+
+        DEFPUSHBUTTON   "", IDC_YES, 30, 6, 48, 13, WS_GROUP
+        PUSHBUTTON      "", IDC_NO, 84, 6, 48, 13
+        PUSHBUTTON      "", IDC_CANCEL, 138, 6, 48, 13
+
+    END
+END
+
+
+DLGTEMPLATE IDD_SAVEFILE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_SAVEFILE, 43, 33, 264, 104, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        CTEXT           "", IDC_TEXT1, 0, 89, 264, 9
+        ENTRYFIELD      "", IDC_TEXT2, 12, 76, 240, 9, ES_CENTER
+        CTEXT           "", IDC_TEXT3, 0, 57, 264, 10
+            PRESPARAMS PP_FONTNAMESIZE, "12.Helv"
+        AUTOCHECKBOX    "", IDC_REPLACEALL, 86, 44, 144, 10,
+                        BS_NOPOINTERFOCUS | NOT WS_VISIBLE
+        CTEXT           "", IDC_TEXT4, 12, 25, 240, 16, DT_WORDBREAK
+
+        CONTROL         "", IDC_RECT, 0, 22, 264, 82, WC_STATIC,
+                        SS_BKGNDRECT | WS_GROUP | NOT WS_VISIBLE
+        BEGIN
+            ICON            IDI_SAVICO, IDI_SAVICO, 24, 48, 21, 16
+            LTEXT           "", IDC_TEXT1, 60, 56, 196, 9, NOT WS_GROUP
+            LTEXT           "", IDC_TEXT2, 60, 45, 196, 9, NOT WS_GROUP
+            ICON            IDI_DELICO, IDI_DELICO, 24, 16, 21, 16
+            LTEXT           "", IDC_TEXT3, 60, 24, 196, 9, NOT WS_GROUP
+            LTEXT           "", IDC_TEXT4, 60, 13, 196, 9, NOT WS_GROUP
+        END
+
+        PUSHBUTTON      "Btn1", IDC_BTN1, 7, 6, 60, 13, WS_GROUP | NOT WS_VISIBLE
+        DEFPUSHBUTTON   "Btn2", IDC_BTN2, 70, 6, 60, 13
+        PUSHBUTTON      "Btn3", IDC_BTN3, 133, 6, 60, 13
+        PUSHBUTTON      "Btn4", IDC_BTN4, 196, 6, 60, 13
+    END
+END
+
+
+DLGTEMPLATE IDD_COLUMNS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_COLUMNS, 5, 16, 108, 178, WS_VISIBLE |
+            NOT FS_DLGBORDER | FS_SIZEBORDER,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        LTEXT           "", IDC_COLLIST, 0, 19, 108, 158, WS_TABSTOP
+                        PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+        PUSHBUTTON      "", IDC_UP,   21, 2, 24, 13, BS_NOPOINTERFOCUS | WS_GROUP
+        PUSHBUTTON      "", IDC_DOWN, 51, 2, 24, 13, BS_NOPOINTERFOCUS
+    END
+END
+
+
+DLGTEMPLATE IDD_GROUPS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_GROUPS, 5, 21, 344, 148, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        LTEXT           "", IDC_GRPLIST, 4, 24, 88, 116, WS_TABSTOP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "", IDC_UP, 16, 5, 24, 13, BS_NOPOINTERFOCUS
+        PUSHBUTTON      "", IDC_DOWN, 46, 5, 24, 13, BS_NOPOINTERFOCUS
+        LTEXT           "", IDC_GRPNAMETXT, 98, 132, 238, 8, 
+                        DT_MNEMONIC
+        ENTRYFIELD      "", IDC_GRPNAME, 100, 120, 124, 8, ES_MARGIN
+        PUSHBUTTON      "", IDC_GRPNEW, 230, 118, 54, 13, 
+                        BS_NOPOINTERFOCUS
+        PUSHBUTTON      "", IDC_GRPDEL, 286, 118, 54, 13, 
+                        BS_NOPOINTERFOCUS
+        LTEXT           "", IDC_GRPPATHTXT, 98, 102, 238, 8, 
+                        DT_MNEMONIC
+        ENTRYFIELD      "", IDC_GRPPATH, 100, 91, 124, 8, ES_MARGIN
+        PUSHBUTTON      "", IDC_GRPFIND, 230, 89, 54, 13, 
+                        BS_NOPOINTERFOCUS
+        PUSHBUTTON      "", IDC_GRPCREATE, 286, 89, 54, 13, 
+                        BS_NOPOINTERFOCUS
+        LTEXT           "", IDC_GRPFILETXT, 98, 72, 128, 8, 
+                        DT_MNEMONIC
+        ENTRYFIELD      "", IDC_GRPFILE, 100, 61, 124, 8, ES_MARGIN
+
+        CTEXT           "", IDC_GRPSEQTXT, 231, 72, 51, 8, DT_MNEMONIC | NOT WS_GROUP
+        ENTRYFIELD      "", IDC_GRPSEQ,    233, 61, 48, 8, ES_MARGIN
+        CTEXT           "", IDC_GRPDIGTXT, 287, 72, 51, 8, DT_MNEMONIC | NOT WS_GROUP
+        ENTRYFIELD      "", IDC_GRPDIG,    289, 61, 47, 8, ES_MARGIN
+
+        LTEXT           "", IDC_GRPINFO1, 100, 50, 236, 8, 
+                        DT_WORDBREAK | NOT WS_GROUP
+        LTEXT           "", IDC_GRPINFO2, 100, 41, 236, 8,
+                        DT_WORDBREAK | NOT WS_GROUP
+        LTEXT           "", IDC_GRPINFO3, 100, 32, 236, 8,
+                        DT_WORDBREAK | NOT WS_GROUP
+        LTEXT           "", IDC_GRPERRTXT, 98, 22, 238, 8
+                        PRESPARAMS PP_FOREGROUNDCOLOR, 0x00FF0000L
+        PUSHBUTTON      "", IDC_GRPUNDO, 212, 5, 60, 13, 
+                        BS_NOPOINTERFOCUS
+        DEFPUSHBUTTON   "", IDC_GRPAPPLY, 278, 5, 60, 13, 
+                        BS_NOPOINTERFOCUS
+    END
+END
+
+
+DLGTEMPLATE IDD_INTRODLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_INTRODLG, 43, 7, 248, 130,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        GROUPBOX        "", 128, 8, 98, 232, 32, NOT WS_GROUP
+        RTEXT           "", IDC_INTROWELCOME, 12, 106, 80, 10, DT_VCENTER | NOT 
+                        WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv"
+        LTEXT           "Cameraderie", -1, 99, 103, 128, 16, DT_VCENTER | 
+                        NOT WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "24.Tms Rmn"
+        CTEXT           "", 
+                        IDC_INTROPATHTXT, 0, 76, 248, 10, NOT WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv"
+        ENTRYFIELD      "", IDC_INTROPATH, 13, 58, 148, 8, ES_MARGIN
+        PUSHBUTTON      "", IDC_INTROFIND, 169, 56, 68, 13, BS_NOPOINTERFOCUS
+        CTEXT           "", 
+                        IDC_INTROMSG1, 0, 40, 248, 8, DT_WORDBREAK
+        CTEXT           "", 
+                        IDC_INTROMSG2, 0, 32, 248, 8, DT_WORDBREAK
+        DEFPUSHBUTTON   "", IDC_OK, 75, 5, 48, 13
+        PUSHBUTTON      "", IDC_EXIT, 133, 5, 48, 13
+    END
+END
+
+
+DLGTEMPLATE DID_FILE_DIALOG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", DID_FILE_DIALOG, 57, 35, 156, 176,
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+    BEGIN
+        LTEXT           "", IDC_DIREFTXT, 8, 161, 141, 8,
+                        NOT WS_GROUP | DT_MNEMONIC
+        ENTRYFIELD      "", IDC_DIREF, 10, 150, 136, 8, ES_MARGIN
+        LTEXT           "", DID_DRIVE_TXT, 8, 136, 141, 8, DT_MNEMONIC
+        CONTROL         "", DID_DRIVE_CB, 8, 44, 141, 91, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        LTEXT           "", DID_DIRECTORY_TXT, 8, 111, 141, 8, DT_MNEMONIC
+        LISTBOX         DID_DIRECTORY_LB, 8, 44, 139, 64,
+                        LS_HORZSCROLL | LS_OWNERDRAW
+        CTEXT           "", IDC_DIRMSG1, 0, 30, 156, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CTEXT           "", IDC_DIRMSG2, 0, 22, 156, 8
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        PUSHBUTTON      "", DID_OK_PB, 28, 4, 48, 13, WS_GROUP | BS_NOPOINTERFOCUS
+        PUSHBUTTON      "", DID_CANCEL_PB, 80, 4, 48, 13, BS_NOPOINTERFOCUS
+
+        LTEXT           "", DID_FILENAME_TXT, 0, 0, 0, 0, NOT WS_VISIBLE
+        ENTRYFIELD      "", DID_FILENAME_ED,  0, 0, 0, 0, NOT WS_VISIBLE
+        LTEXT           "", DID_FILTER_TXT, 0, 0, 0, 0, NOT WS_VISIBLE
+        CONTROL         "", DID_FILTER_CB,  0, 0, 0, 0, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST
+        LTEXT           "", DID_FILES_TXT, 0, 0, 0, 0, NOT WS_VISIBLE
+        LISTBOX         DID_FILES_LB,      0, 0, 0, 0, NOT WS_VISIBLE
+
+    END
+END
+
+
+DLGTEMPLATE IDD_COLORS LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_COLORS, 45, 35, 200, 130, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        CTEXT           "", IDC_CLRCBTXT, 28, 116, 143, 8
+        CONTROL         "", IDC_CLRCB, 28, 63, 144, 51, WC_COMBOBOX, 
+                        CBS_DROPDOWNLIST | WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", -1, 28, 74, 144, 18, WC_STATIC, SS_FGNDFRAME | 
+                        WS_GROUP | WS_VISIBLE
+        CTEXT           "", IDC_CLRWINDOW, 29, 75, 142, 16,
+                        DT_VCENTER | NOT WS_GROUP
+        CONTROL         "", -1, 28, 50, 144, 18, WC_STATIC, SS_FGNDFRAME | 
+                        WS_GROUP | WS_VISIBLE
+        CTEXT           "", IDC_CLRHILITE, 29, 51, 142, 16, 
+                        DT_VCENTER | NOT WS_GROUP
+        CONTROL         "", -1, 28, 26, 144, 18, WC_STATIC,
+                        SS_FGNDFRAME | WS_GROUP | WS_VISIBLE
+        CTEXT           "", IDC_CLRGROUP, 29, 27, 142, 16, 
+                        DT_VCENTER | NOT WS_GROUP
+        CTEXT           "", IDC_CLRSEPARATOR, 29, 27, 142, 16, 
+                        DT_VCENTER | NOT WS_GROUP | NOT WS_VISIBLE
+        DEFPUSHBUTTON   "", IDC_UNDO, 28, 5, 60, 13, BS_NOPOINTERFOCUS
+        PUSHBUTTON      "", IDC_DEFAULT, 112, 5, 60, 13, BS_NOPOINTERFOCUS
+
+    END
+END
+
+
+DLGTEMPLATE IDD_INFO LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_INFO, 71, 22, 252, 186, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        CTEXT           "", IDC_MAKEMODEL,
+                        0, 169, 252, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        GROUPBOX        "", IDC_USBTXT, 8, 121, 236, 44
+        CTEXT           "", IDC_USBVERTXT, 18, 144, 42, 8
+        ENTRYFIELD      "", IDC_USBVER, 20, 133, 38, 8,
+                        ES_CENTER | ES_MARGIN | ES_READONLY
+        CTEXT           "", IDC_BUSDEVTXT, 64, 144, 66, 8
+        ENTRYFIELD      "", IDC_BUSDEV, 78, 133, 38, 8,
+                        ES_CENTER | ES_MARGIN | ES_READONLY
+        CTEXT           "", IDC_VENDPRODTXT, 132, 144, 104, 8
+        ENTRYFIELD      "", IDC_VENDPROD, 138, 133, 92, 8,
+                        ES_CENTER | ES_MARGIN | ES_READONLY
+        GROUPBOX        "", IDC_CAMERATXT, 8, 15, 236, 96
+        CTEXT           "", IDC_FILEFMTTXT, 18, 89, 100, 8
+        LISTBOX         IDC_FILEFMT, 20, 38, 96, 48
+        LTEXT           "", IDC_CAPTURETXT, 24, 26, 104, 8
+        CTEXT           "", IDC_SERNBRTXT, 134, 89, 100, 8, 
+        ENTRYFIELD      "", IDC_SERNBR, 138, 78, 92, 8,
+                        ES_CENTER | ES_MARGIN | ES_READONLY
+        CTEXT           "", IDC_DEVVERTXT, 134, 62, 100, 8
+        ENTRYFIELD      "", IDC_DEVVER, 138, 51, 92, 8,
+                        ES_CENTER | ES_MARGIN | ES_READONLY
+    END
+END
+
+
+/***********************************/
+
+
+DLGTEMPLATE IDD_SELECTCAMERA LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_SELECTCAMERA, 72, 46, 216, 126, 0,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON | FCF_TASKLIST
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        CTEXT           "", IDC_TEXT1, 4, 108, 208, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        LISTBOX         IDC_CAMLIST, 16, 59, 184, 40
+        AUTOCHECKBOX    "", IDC_AUTOMOUNT, 16, 44, 169, 10
+        PUSHBUTTON      IDI_EJECTICO_NBR, IDC_EJECT, 186, 44, 16, 11
+                        BS_MINIICON | NOT BS_TEXT | BS_NOPOINTERFOCUS
+        CTEXT           "", IDC_TEXT4, 4, 23, 210, 16, DT_WORDBREAK
+        DEFPUSHBUTTON   "", IDC_OK, 16, 5, 58, 13, BS_NOPOINTERFOCUS | 
+                        WS_GROUP
+        PUSHBUTTON      "", IDC_RETRY, 79, 5, 58, 13, BS_NOPOINTERFOCUS
+        PUSHBUTTON      "", IDC_CANCEL, 142, 5, 58, 13, BS_NOPOINTERFOCUS
+    END
+END
+
+
+DLGTEMPLATE IDD_EJECTALL LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_EJECTALL, 72, 60, 200, 112, 0,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        CTEXT           "", IDC_TEXT1, 4, 94, 192, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        LISTBOX         IDC_CAMLIST, 16, 45, 168, 40,
+                        LS_MULTIPLESEL/* | LS_EXTENDEDSEL*/
+        CTEXT           "", IDC_TEXT4, 4, 27, 192, 8
+        DEFPUSHBUTTON   "", IDC_YES, 40, 5, 54, 13, BS_NOPOINTERFOCUS | WS_GROUP
+        PUSHBUTTON      "No", IDC_NO, 106, 5, 54, 13, BS_NOPOINTERFOCUS
+    END
+END
+
+
+DLGTEMPLATE IDD_FATAL LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_FATAL, 109, 54, 192, 80, 0, 
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_TASKLIST | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        ICON            SPTR_ICONERROR, -1, 12, 52, 21, 16, SS_SYSICON
+        CTEXT           "", IDC_TEXT1, 38, 48, 144, 20, DT_WORDBREAK
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        CTEXT           "", IDC_TEXT4, 0, 26, 192, 10, NOT WS_GROUP
+        DEFPUSHBUTTON   "", IDC_EXIT, 66, 5, 60, 13, WS_GROUP
+    END
+END
+
+
+DLGTEMPLATE IDD_LOADING LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_LOADING, 109, 54, 210, 80, 0,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        ICON            SPTR_ICONINFORMATION, -1, 12, 52, 21, 16, SS_SYSICON
+        CTEXT           "", IDC_TEXT1, 38, 54, 170, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        CTEXT           "", IDC_TEXT4, 0, 26, 210, 10, NOT WS_GROUP
+        DEFPUSHBUTTON   "", IDC_EXIT, 75, 5, 60, 13, WS_GROUP
+    END
+END
+
+
+DLGTEMPLATE IDD_DISCONNECT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_DISCONNECT, 140, 63, 192, 100, 0,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        ICON            SPTR_ICONERROR, -1, 18, 70, 21, 16, SS_SYSICON
+        CTEXT           "", IDC_DISCON1, 44, 83, 132, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        CTEXT           "", IDC_DISCON2, 44, 73, 132, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        CTEXT           "", IDC_DISCON3, 44, 63, 132, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        CTEXT           "", IDC_DISCON4, 0, 50, 192, 8
+        CTEXT           "", IDC_DISCON5, 0, 42, 192, 8
+        CTEXT           "", IDC_DISCON6, 0, 28, 192, 8
+        DEFPUSHBUTTON   "", IDC_EXIT, 66, 5, 60, 13
+    END
+END
+
+
+DLGTEMPLATE IDD_NOUSB LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_NOUSB, 108, 54, 224, 112, 0,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_TASKLIST | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        ICON            SPTR_ICONWARNING, -1, 8, 88, 21, 16, SS_SYSICON
+        CTEXT           "", IDC_TEXT1, 34, 90, 174, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        CTEXT           "", IDC_TEXT2, 4, 65, 216, 16,
+                        DT_WORDBREAK | NOT WS_GROUP
+        CTEXT           "", IDC_TEXT3, 4, 46, 216, 16,
+                        DT_WORDBREAK | NOT WS_GROUP
+        AUTOCHECKBOX    "", IDC_DONOTSHOW,
+                        48, 26, 172, 10
+        DEFPUSHBUTTON   "", IDC_CONTINUE, 48, 5, 60, 13,
+                        BS_NOPOINTERFOCUS | WS_GROUP
+        PUSHBUTTON      "", IDC_EXIT, 116, 5, 60, 13, BS_NOPOINTERFOCUS
+    END
+END
+
+
+DLGTEMPLATE IDD_LVMHANG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Cameraderie", IDD_LVMHANG, 108, 54, 224, 124, 0,
+            FCF_SYSMENU | FCF_TITLEBAR | FCF_CLOSEBUTTON
+            PRESPARAMS PP_FONTNAMESIZE, "10.Helv"
+            PRESPARAMS PP_FOREGROUNDCOLOR, 0x00000000L
+    BEGIN
+        ICON            SPTR_ICONERROR, -1, 8, 99, 21, 16, SS_SYSICON
+        CTEXT           "", IDC_TEXT1, 34, 101, 174, 10
+                        PRESPARAMS PP_FONTNAMESIZE, "12.Helv Bold"
+        CTEXT           "", IDC_TEXT2, 4, 83, 216, 8
+        CTEXT           "", IDC_TEXT3, 4, 74, 216, 8
+        CTEXT           "", IDC_TEXT4, 4, 65, 216, 8
+        AUTOCHECKBOX    "", IDC_AUTOMOUNT, 56, 47, 164, 10
+        CTEXT           "", IDC_TEXT5, 3, 22, 216, 16, DT_WORDBREAK
+        DEFPUSHBUTTON   "", IDC_CONTINUE, 82, 5, 60, 13, BS_NOPOINTERFOCUS
+    END
+END
+

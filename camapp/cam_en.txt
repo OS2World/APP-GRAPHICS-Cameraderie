@@ -1,0 +1,377 @@
+/****************************************************************************/
+/* cam_en.txt - v1.5
+
+  Use this file to translate Cameraderie into your language.
+
+  Instructions:
+  =============
+    - Translate the quoted strings in the right-hand column below.
+
+    - Use a tilde ('~') to set a keyboard shortcut for menu items.
+
+    - Error messages should be short but understandable - use the
+      phrasing that works best in your language.
+
+    - Some items have a short comment next to them to help you
+      identify how they are used - you can delete the comment if needed.
+
+    - When you are done, run cam_xx.cmd to create your language dll
+      (run it without any parameters to display its help screen).
+
+    - If you would like to share your work with other users,
+      please add your name to the Contributors list below,
+      then email *this file* (not the dll) to:  rich@e-vertise.com
+
+  Thanks for your help!
+
+  FYI... strings that are new or changed in this version start
+         in the first column;  strings that were used in previous
+         versions are indented one space
+
+*/
+/****************************************************************************/
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Cameraderie.
+ *
+ * The Initial Developer of the Original Code is Richard L. Walsh.
+ * 
+ * Portions created by the Initial Developer are Copyright (C) 2006,2007
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *  Kris Steenhaut - translation to Dutch
+ *  Guillaume Gay - translation to French <GuillaumeGay@bigfoot.com>
+ *  Franz Bakan - translation to German
+ *  [your name here] - translation to [language]
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/****************************************************************************/
+
+ // Don't change
+ // this column             Translate this column
+ // ================        =======================
+
+ // Menubar
+ MNU_File,                  "~File"
+MNU_Open,                   "~Open..."
+ MNU_Refresh,               "~Refresh list"
+ MNU_SaveNow,               "~Save now..."
+ MNU_CameraInfo,            "~Camera Info..."
+ MNU_Exit,                  "E~xit"
+ MNU_Sort,                  "~Sort"
+ MNU_Indicators,            "Sort ~indicators"
+ MNU_Done,                  "Don~e"
+ MNU_View,                  "~View"
+ MNU_Details,               "~Details"
+ MNU_Small,                 "~Small thumbnails"
+ MNU_Medium,                "~Medium thumbnails"
+ MNU_Large,                 "~Large thumbnails"
+ MNU_Reset,                 "Reset ~widths"
+ MNU_Rearrange,             "Rearrange ~columns..."
+ MNU_Colors,                "~Colors and Fonts..."
+ MNU_Groups,                "~Groups"
+ MNU_EditGroups,            "~Edit..."
+ MNU_Options,               "~Options"
+ MNU_Rotate,                "~Rotate"
+ MNU_RotateOnLoad,          "Rotate ~thumbnails automatically"
+ MNU_RotateOnSave,          "Rotate ~photos when saving"
+MNU_Removables,             "Removable ~Drives"
+MNU_MountDrives,            "~Mount drives automatically"
+MNU_EjectInfo,              "when Cameraderie ends..."
+MNU_ShowEjectDlg,           "~Show Eject Drives dialog"
+MNU_AlwaysEject,            "~Always eject drives"
+MNU_NeverEject,             "~Never eject drives"
+ MNU_Restore,               "Restore defaults on e~xit"
+
+ // Sort Menu
+ MNU_Action,                "~Action"
+ MNU_Number,                "~Number"
+ MNU_Title,                 "~Title"
+ MNU_Group,                 "~Group"
+ MNU_Format,                "~Format"
+ MNU_XY,                    "~X Y"
+ MNU_ThumbFmt,              "Th~umb Fmt"
+ MNU_ThumbXY,               "Thum~b X Y"
+ MNU_ThumbSize,             "Thumb Si~ze"
+ MNU_Handle,                "~Handle"
+ MNU_Size,                  "~Size"
+ MNU_Day,                   "Da~y"
+ MNU_Date,                  "~Date"
+ MNU_Time,                  "Ti~me"
+
+ // Popup Menus
+ MNU_Save,                  "~Save"
+ MNU_Delete,                "~Delete"
+ MNU_Unmark,                "~Unmark"
+ MNU_UndoTitle,             "Undo ~Title"
+ MNU_RotateLeft,            "Rotate ~Left"
+ MNU_RotateRight,           "Rotate ~Right"
+ MNU_Show,                  "Sho~w"
+ MNU_SetGroup,              "Set ~Group"
+
+ MNU_SaveAll,               "~Save all"
+ MNU_DeleteAll,             "~Delete all"
+ MNU_UnmarkAll,             "~Unmark all"
+ MNU_UndoAllTitles,         "~Undo all Titles"
+
+//----------------------------------------------------------------------------
+
+ // Column Headings          
+ // Important:  For column headings, Cameraderie will replace the
+ //             '|' with a line break.  Please do not erase the '|'
+ //             or else the column headings will be too wide.
+
+ COL_Nbr,                   "#"
+ COL_Title,                 "Title"
+ COL_Group,                 "Group"
+ COL_ImageFormat,           "Image|Format"
+ COL_ImageXY,               "Image|X Y"
+ COL_ThumbFormat,           "Thumb|Format"
+ COL_ThumbXY,               "Thumb|X Y"
+ COL_ThumbSize,             "Thumb|Size"
+ COL_Handle,                "Handle"
+COL_FileSize,               "File|Size"
+ COL_Day,                   "Day"
+ COL_Date,                  "Date"
+ COL_Time,                  "Time"
+
+ // Column Data
+ COL_Sun,                   "Sun"
+ COL_Mon,                   "Mon"
+ COL_Tue,                   "Tue"
+ COL_Wed,                   "Wed"
+ COL_Thu,                   "Thu"
+ COL_Fri,                   "Fri"
+ COL_Sat,                   "Sat"
+ COL_TooBig,                "too big"       // a number is too big to fit
+COL_Unknown,                "Unknown"       // an unknown file format
+
+ // Status Bar
+ STS_Status,                "  Total: %d / %d kb    Save: %d / %d kb    Erase: %d / %d kb    "
+ STS_GetList,               "Error getting file list"
+ STS_RefreshList,           "Unable to refresh list"
+ STS_NoFiles,               "No files to display"
+ STS_ListingFiles,          "Error while listing files"
+ STS_NoThumbnail,           "No thumbnail available"
+ STS_GetThumbErr,           "Error getting thumbnail"
+
+//----------------------------------------------------------------------------
+
+ // Common Buttons
+ BTN_EditGroups,            "Edit ~Groups"
+ BTN_Exit,                  "E~xit"
+ BTN_Yes,                   "~Yes"
+ BTN_No,                    "~No"
+ BTN_Cancel,                "~Cancel"
+ BTN_Undo,                  "~Undo"
+ BTN_Apply,                 "~Apply"
+ BTN_OK,                    "~OK"
+ BTN_Retry,                 "~Retry"
+ BTN_Skip,                  "S~kip"
+ BTN_Stop,                  "~Stop"
+ BTN_Close,                 "~Close"
+ BTN_Replace,               "Re~place"
+ BTN_Create,                "~Create"
+ BTN_Find,                  "~Find"
+ BTN_New,                   "~New"
+ BTN_Delete,                "~Delete"
+ BTN_Undelete,              "Un~delete"
+ BTN_Default,               "~Default"
+BTN_Continue,               "~Continue"
+BTN_Open,                   "~Open"
+
+ // Date Substitution characters
+ // used to insert dates into file names & paths, e.g. %y inserts the year;
+ // supply the leading character for each word in both lower & upper case
+ SUB_Year,                  "yY"
+ SUB_Month,                 "mM"
+ SUB_Day,                   "dD"
+
+//----------------------------------------------------------------------------
+
+ // Error dialogs
+ DLG_Loading,               "Loading.  Please wait..."
+ DLG_ToEndNow,              "To end the program now, press Exit"
+ DLG_NoCameras,             "No cameras found !"
+ DLG_PlugIn,                "Plug in your camera, then press Retry"
+ DLG_ToEnd,                 "To end the program, press Exit"
+
+ // Disconnected dialog
+ DLG_Disconnected1,         "The camera has been"
+ DLG_Disconnected2,         "disconnected or"
+ DLG_Disconnected3,         "turned off !"
+ DLG_WindowWillClose1,      "This window will close automatically"
+ DLG_WindowWillClose2,      "shortly after you reconnect the camera."
+
+ // No usbresmg.sys dialog (v1.5)
+DLG_NoUsbRes1,              "USBRESMG.SYS is not installed"
+DLG_NoUsbRes2,              "If you use a PTP camera (e.g. Canon or Kodak), please install it."
+DLG_NoUsbRes3,              "If you use a flash card or a camera that can be assigned a drive letter, you do not need it."
+DLG_DoNotShow,              "Do not show this error again"
+
+ // Select Camera dialog (v1.5)
+DLG_Select,                 "Select a camera..."
+MSG_MB,                     "MB"        // your abbreviation for 'megabytes'
+MSG_PTPCamera,              "PTP Camera"
+MSG_Unidentified,           "Unidentified Device"
+MSG_NoCamera,               "[ no camera ]"
+MSG_DisconnectDevice,       "Please disconnect the device you ejected"
+MSG_UnableToEject,          "Unable to eject the selected device"
+
+ // Removable Drive Error dialog (v1.5)
+DLG_Removable1,             "Removable Drive Error !"
+DLG_Removable2,             "LVM hung while mounting your removable drives."
+DLG_Removable3,             "Disconnect any USB drives you have ejected."
+DLG_Removable4,             "If necessary, disconnect all USB drives."
+DLG_Removable5,             "This window will close when LVM resumes.|If not, press Continue"
+
+ // Eject RemovableDrives dialog (v1.5)
+DLG_Eject                   "Eject Removable Drives?"       // dialog title
+MSG_Ejecting                "Ejecting Removable Drives..."  // dialog title
+MSG_ThisMayTake             "This may take a few seconds"
+
+//----------------------------------------------------------------------------
+
+ // Directory dialog
+ DLG_ChooseDir,             "Choose ~a Directory"
+ DLG_Drive,                 "D~rive"
+ DLG_Directory,             "~Directory"
+ DLG_DirDlgMsg1,            "To create new directories, add"
+ DLG_DirDlgMsg2,            "their names to an existing Path"
+
+ // Colors dialog
+ DLG_View,                  "View"
+ DLG_WindowColors,          "Window colors and font"
+ DLG_HighlightColors,       "Highlight colors"
+ DLG_GroupColors,           "Group Name colors"
+ DLG_SeparatorColor,        "Column Separator color"
+
+ // Column dialog strings
+ MSG_Show,                  "Show"
+ MSG_Column,                "Column"
+
+ // Info dialog
+ DLG_Usb,                   "USB"
+ DLG_Version,               "Version"
+ DLG_BusDevice,             "Bus-Device"
+ DLG_VendorProduct,         "Vendor - Product"
+ DLG_Camera,                "Camera"
+ DLG_FileFormats,           "File Formats"
+ DLG_CaptureFormat,         "*  Capture Format"
+ DLG_SerialNumber,          "Serial Number"
+ DLG_DeviceVersion,         "Device Version"
+
+//----------------------------------------------------------------------------
+
+ // Confirm Save dialog
+ DLG_SaveChanges,           "Save Changes..."
+ DLG_Save,                  "~Save %d files - %d kb"
+ DLG_EraseAfterSave,        "Erase ~after save"
+ DLG_EraseLater,            "~Mark to erase later"
+ DLG_DontErase,             "~Don't erase or mark"
+ DLG_Erase,                 "~Erase %d files - %d kb"
+
+ // Save Files dialog
+ DLG_ReplaceAll,            "Replace ~all files"
+
+ // Save Files strings
+ MSG_Erasing,               "Erasing %s"
+ MSG_Saving,                "Saving %s as:"
+ MSG_SavedErased,           "%d files saved - %d files erased"
+
+ // Done Saving dialog
+ MSG_SavedOK,               "%d file(s) (%d KB) were saved"
+ MSG_SaveEraseOK,           "%d file(s) (%d KB) were saved then erased"
+ MSG_NotSaved,              "%d file(s) (%d KB) were not saved"
+ MSG_ErasedOK,              "%d file(s) (%d KB) were erased"
+ MSG_NotErased,             "%d file(s) (%d KB) were not erased"
+
+ // Save Files errors
+ // Important:  limit MSG_xxx & MSGxxx1 strings to less than 45 characters;
+ //             if needed, you can split the MSG_xxx2 strings into 2 lines
+ //             using the '|' character
+ MSG_TooLong1,              "The path is too long (over 259 characters)"
+ MSG_TooLong2,              "Edit the path then press Retry"
+ MSG_FileExists1,           "A file with this name already exists"
+ MSG_FileExists2,           "Press Replace, or rename the file|then press Retry"
+ MSG_PathNotFound1,         "The specified path could not be found"
+ MSG_PathNotFound2,         "Press Create, or change the path|then press Retry"
+ MSG_CouldNotCreate1,       "The specified path could not be created"
+ MSG_CouldNotCreate2,       "Edit the path then press Create"
+ MSG_GetData,               "Unable to get data from the camera"
+ MSG_OpCancelled,           "The current operation was cancelled"
+ MSG_OpenFile,              "Unable to open the file"
+ MSG_WriteFile,             "Unable to write to the file"
+ MSG_ErasePhoto,            "Unable to erase from camera"
+ MSG_Fatal1,                "A fatal error has occurred"
+ MSG_Fatal2,                "Press Stop to close this window|then try again"
+
+//----------------------------------------------------------------------------
+
+ // Groups dialog
+ DLG_GroupName,             "~Group Name"
+ DLG_SaveDir,               "~Save in Directory"
+ DLG_Template,              "Filename ~Template"
+ DLG_Serial,                "Serial Nb~r"
+ DLG_Digits,                "Di~gits"
+ DLG_InsertsSerial,         "#  inserts the serial number"
+ DLG_CopiesFilename,        "*  copies file name or extension"
+ DLG_InsertYMD,             "%y, %m, %d  insert year, month, day"
+
+ // Group dialog strings
+ MSG_Deleted,               "_deleted_"
+ MSG_Btn,                   "Btn"
+ MSG_Group,                 "Group"
+ MSG_NewGroup,              "New Group %d"
+
+ // Group dialog errors
+ MSG_ButtonsAssigned,       "All 10 group buttons are already assigned"
+ MSG_DirIsBlank,            "Save in Directory is blank"
+ MSG_DirCreated,            "Save in Directory was created"
+ MSG_PathIsAFile,           "Path names a file"
+ MSG_DirNotCreated,         "Save in Directory could not be created"
+ MSG_GroupNameBlank,        "Group Name can not be blank"
+ MSG_GroupNameInUse,        "Group Name is already in use"
+ MSG_PathDoesNotExist,      "Path does not exist - press Create"
+ MSG_PathInvalid,           "Path is invalid"
+
+ // Default Groups
+ GRP_Default,               "default"
+ GRP_Family,                "Family"
+ GRP_Travel,                "Travel"
+ GRP_Nature,                "Nature"
+ GRP_Other,                 "Other"
+ GRP_FamilyTempl,           "family#"
+ GRP_TravelTempl,           "travel#"
+ GRP_NatureTempl,           "nature#"
+ GRP_OtherTempl,            "other#"
+
+//----------------------------------------------------------------------------
+
+ // Intro dialog            // IntroMsg1&2 can be rephrased if needed
+ DLG_Welcome,               "Welcome to"  // Welcome to Cameraderie
+ DLG_PleaseSelect,          "Please select a default directory for your photos"
+ DLG_IntroMsg1,             "Cameraderie lets you use any number of directories"
+ DLG_IntroMsg2,             "to store your photos - this one is just the default"
+
+ // Startup errors
+ MSG_InitDisplay,           "Unable to initialize main display"
+ MSG_InitCamera,            "Unable to initialize camera"
+ MSG_ReopenCamera,          "Unable to reopen camera!"
+
+//----------------------------------------------------------------------------
+

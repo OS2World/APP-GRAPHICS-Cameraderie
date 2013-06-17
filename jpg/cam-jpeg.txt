@@ -1,0 +1,76 @@
+_______________________________________________________________________
+_______________________________________________________________________
+
+  cam-jpeg.txt - notes on building Cameraderie using libjpeg
+
+  (C) Copyright 2006, 2007  R L Walsh
+  released under the Mozilla Public License
+
+  This software is based in part on the work of the Independent JPEG Group.
+    Copyright (C) 1994-1997, Thomas G. Lane.
+  For conditions of distribution and use, see the accompanying
+  readme-jpg.txt file.
+_______________________________________________________________________
+_______________________________________________________________________
+
+  Source Directories
+  ------------------
+  The 'jpg' directory in this distribution contains the headers and
+  lib needed to build Cameraderie.  The 'new-changed' and 'diffs'
+  subdirectories contain files needed to recreate the modified version
+  of libjpeg used by Cam.
+
+  Cameraderie's LIBJPEG
+  ---------------------
+  The primary difference between Cam's libjpeg and the generic v6b
+  is the inclusion of transupp.o in the library.  This is usually
+  built separately and linked into jpegtran.exe.  However, Cam
+  needs this code to implement "Lossless JPEG Rotation".
+
+  Transupp.c itself has been modified by two patches:
+    - a 3rd-party patch which fixes errors in a JPEG's Exif info
+    - mine, which always changes the Exif rotation index to '1'
+      (i.e. "right-side up") when writing the data to file
+
+  My change may make the rotation functions unsuitable for use by apps
+  that wish to rotate an image & accurately record its rotation index.
+  (Note:  If the user changes a photo's orientation, Cam assumes that
+  s/he has reoriented it right-side up and changes the rotation index
+  accordingly.  If the photo is saved as received from the camera, Cam
+  doesn't use these functions, so the index remains unchanged.)
+
+  Recreating LIBJPEG
+  ------------------
+  Rather than including the entire libjpeg v6b distribution, this
+  package only contains files that have been modified or added.
+  You can either use the files in 'new-changed' to replace the
+  originals, or you can apply the patches found in 'diffs'.
+  Note that 'new-changed' includes a few files for which there
+  are no diffs.
+
+    makefile - this is a slightly simplified version configured for
+        use with gcc 3.x on OS/2 - no autoconf nonsense needed!
+
+    jconfig.h - just a copy of jconfig.doc with a couple of changes
+
+    jmorecfg.h - sets the byte order for RGB to B-G-R
+
+    transupp.c - contains the patches described above
+
+    jcmainct.c & jdmainct.c - gcc complained because they used the
+        word 'main' as a variable - I changed it to 'mainptr'
+
+    jpegexiforient.c - not part of libjpeg.  I used it learn how
+        to locate the Exif rotation info.  You can build it as a
+        standalone executable.
+
+_______________________________________________________________________
+_______________________________________________________________________
+
+  Rich Walsh <rich@e-vertise.com>
+  Fort Myers, Florida
+
+  February 15, 2007
+_______________________________________________________________________
+_______________________________________________________________________
+

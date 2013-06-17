@@ -1,0 +1,162 @@
+/****************************************************************************/
+// camapp.rc
+//
+//  - the primary resource file, excluding NLS stringtables
+//
+/****************************************************************************/
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Cameraderie.
+ *
+ * The Initial Developer of the Original Code is Richard L. Walsh.
+ * 
+ * Portions created by the Initial Developer are Copyright (C) 2006,2007
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/****************************************************************************/
+
+#include "camapprc.h"
+
+RCINCLUDE   "camapp.dlg"
+RCINCLUDE   "camnls.rc"
+
+/****************************************************************************/
+
+ICON        IDI_APPICO      "CAMAPP.ICO"
+ICON        IDI_BLKICO      "CAMBLK.ICO"
+ICON        IDI_SAVICO      "CAMSAV.ICO"
+ICON        IDI_DELICO      "CAMDEL.ICO"
+ICON        IDI_DONEICO     "CAMDONE.ICO"
+ICON        IDI_EJECTICO    "CAMEJECT.ICO"
+POINTER     IDI_SORTPTR     "CAMSORT.PTR"
+BITMAP      IDB_UPBMP       "CAMUP.BMP"
+BITMAP      IDB_DOWNBMP     "CAMDOWN.BMP"
+BITMAP      IDB_THUMBBMP    "CAMTHUMB.BMP"
+BITMAP      IDB_ROTCCBMP    "CAMROTCC.BMP"
+BITMAP      IDB_ROTCWBMP    "CAMROTCW.BMP"
+
+/****************************************************************************/
+
+MENU    IDM_SINGLE
+  BEGIN
+    MENUITEM            "",         IDM_WRITE
+    MENUITEM            "",         IDM_DELETE
+    MENUITEM            "",         IDM_UNMARK
+    MENUITEM            "",         IDM_UNDOTTL
+    MENUITEM SEPARATOR
+    MENUITEM            "",         IDM_ROTLEFT
+    MENUITEM            "",         IDM_ROTRIGHT
+    MENUITEM            "",         IDM_SHOW
+    SUBMENU             "",         IDM_GRPMENU
+      BEGIN
+        MENUITEM        "",         IDM_GRPMNUFIRST
+      END
+  END
+
+
+MENU    IDM_MULTIPLE
+  BEGIN
+    MENUITEM            "",         IDM_WRITEALL
+    MENUITEM            "",         IDM_DELETEALL
+    MENUITEM            "",         IDM_UNMARKALL
+    MENUITEM            "",         IDM_UNDOTTLALL
+    MENUITEM            "",         IDM_GRPMENU
+  END
+
+
+MENU    IDM_MAIN
+  BEGIN
+    SUBMENU             "",         IDM_FILE
+      BEGIN
+        MENUITEM        "",         IDM_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM        "",         IDM_SYNCDATA
+        MENUITEM        "",         IDM_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM        "",         IDM_INFO
+        MENUITEM        "",         SC_CLOSE, MIS_SYSCOMMAND
+      END
+    SUBMENU             "",         IDM_SORT
+      BEGIN
+        SUBMENU         "",         IDM_SORTSYM
+          BEGIN
+            MENUITEM    "    ",   IDM_INTUITIVE
+            MENUITEM    "    ",   IDM_LITERAL
+          END
+        MENUITEM SEPARATOR
+        MENUITEM        "",         IDM_SORTFIRST
+        MENUITEM SEPARATOR
+        MENUITEM        "",         IDM_SORTDONE
+      END
+    SUBMENU             "",         IDM_VIEW
+      BEGIN
+        MENUITEM        "",         IDM_DETAILS
+        MENUITEM        "",         IDM_SMALL
+        MENUITEM        "",         IDM_MEDIUM
+        MENUITEM        "",         IDM_LARGE
+        MENUITEM SEPARATOR
+        MENUITEM        "",         IDM_COLRESET
+        MENUITEM        "",         IDM_COLORDER
+        MENUITEM        "",         IDM_COLORS
+      END
+    SUBMENU             "",         IDM_GROUPS
+      BEGIN
+        MENUITEM        "",         IDM_EDITGRP
+        MENUITEM        "",         IDM_GRPMENU
+      END
+    SUBMENU             "",         IDM_OPTIONS
+      BEGIN
+        SUBMENU         "",         IDM_ROTATEOPTS
+          BEGIN
+            MENUITEM    "",         IDM_ROTONLOAD
+            MENUITEM    "",         IDM_ROTONSAVE
+          END
+        SUBMENU         "",         IDM_REMOVABLES
+          BEGIN
+            MENUITEM    "",         IDM_AUTOMOUNT
+            MENUITEM SEPARATOR
+            MENUITEM    "",         IDM_EJECTINFO, MIS_STATIC
+            MENUITEM    "",         IDM_EJECTDLG
+            MENUITEM    "",         IDM_EJECTALWAYS
+            MENUITEM    "",         IDM_EJECTNEVER
+          END
+        MENUITEM        "",         IDM_RESTOREDEF
+      END
+  END
+
+/****************************************************************************/
+
+ACCELTABLE IDA_MAIN
+  BEGIN
+    VK_BACKSPACE,   IDM_GRPMNUFIRST,    AF_VIRTUALKEY | AF_CONTROL
+    VK_BACKSPACE,   IDM_GRPMNUFIRST,    AF_VIRTUALKEY | AF_ALT
+    VK_LEFT,        IDC_ROTCC,          AF_VIRTUALKEY | AF_ALT
+    VK_RIGHT,       IDC_ROTCW,          AF_VIRTUALKEY | AF_ALT
+    "G",            IDC_EDITGRP,        AF_CHAR | AF_ALT
+  END
+
+
+ACCELTABLE IDA_UPDOWN
+  BEGIN
+    VK_UP,      IDC_UP,     AF_VIRTUALKEY | AF_ALT
+    VK_DOWN,    IDC_DOWN,   AF_VIRTUALKEY | AF_ALT
+  END
+
+/****************************************************************************/
+
