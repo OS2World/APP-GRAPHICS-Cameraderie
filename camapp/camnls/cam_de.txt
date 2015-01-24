@@ -1,0 +1,377 @@
+/****************************************************************************/
+/* cam_de.txt - v1.5
+
+  Use this file to translate Cameraderie into your language.
+
+  Instructions:
+  =============
+    - Translate the quoted strings in the right-hand column below.
+
+    - Use a tilde ('~') to set a keyboard shortcut for menu items.
+
+    - Error messages should be short but understandable - use the
+      phrasing that works best in your language.
+
+    - Some items have a short comment next to them to help you
+      identify how they are used - you can delete the comment if needed.
+
+    - When you are done, run cam_xx.cmd to create your language dll
+      (run it without any parameters to display its help screen).
+
+    - If you would like to share your work with other users,
+      please add your name to the Contributors list below,
+      then email *this file* (not the dll) to:  rich@e-vertise.com
+
+  Thanks for your help!
+
+  FYI... strings that are new or changed in this version start
+         in the first column;  strings that were used in previous
+         versions are indented one space
+
+*/
+/****************************************************************************/
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Cameraderie.
+ *
+ * The Initial Developer of the Original Code is Richard L. Walsh.
+ * 
+ * Portions created by the Initial Developer are Copyright (C) 2006,2007
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *  Kris Steenhaut - translation to Dutch
+ *  Guillaume Gay - translation to French <GuillaumeGay@bigfoot.com>
+ *  Franz Bakan - translation to German
+ *  [your name here] - translation to [language]
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/****************************************************************************/
+
+ // Don't change
+ // this column             Translate this column
+ // ================        =======================
+
+ // Menubar
+ MNU_File,                  "~Datei"
+ MNU_Open,                  "~ôffnen..."
+ MNU_Refresh,               "Liste er~neuern"
+ MNU_SaveNow,               "Jetzt ~speichern"
+ MNU_CameraInfo,            "~Kamera Info..."
+ MNU_Exit,                  "~Ende"
+ MNU_Sort,                  "~Sortieren"
+ MNU_Indicators,            "S~ortieren nach"
+ MNU_Done,                  "F~ertig"
+ MNU_View,                  "~Zeigen"
+ MNU_Details,               "~Details"
+ MNU_Small,                 "Vorschau ~klein"
+ MNU_Medium,                "Vorschau ~mittel"
+ MNU_Large,                 "Vorschau ~gro·"
+ MNU_Reset,                 "Spaltenbreiten r~Åcksetzen"
+ MNU_Rearrange,             "Spalten neu ~ordnen..."
+ MNU_Colors,                "~Farben und Schriften..."
+ MNU_Groups,                "~Gruppen"
+ MNU_EditGroups,            "~Bearbeiten..."
+ MNU_Options,               "~Optionen"
+ MNU_Rotate,                "~Drehen"
+ MNU_RotateOnLoad,          "Vorschau ~automatisch drehen"
+ MNU_RotateOnSave,          "Bilder beim ~Speichern drehen"
+ MNU_Removables,            "~Wechsellaufwerke"
+ MNU_MountDrives,           "~Laufwerke automatisch einhÑngen"
+ MNU_EjectInfo,             "Beim Beenden von Cameraderie..."
+ MNU_ShowEjectDlg,          "~Dialog fÅr Laufwerke auswerfen anzeigen"
+ MNU_AlwaysEject,           "Laufwerke immer ~auswerfen"
+ MNU_NeverEject,            "Laufwerke ~nie auswerfen"
+ MNU_Restore,               "~Standard-Vorgaben beim Beenden wiederherstellen"
+
+ // Sort Menu
+ MNU_Action,                "~Aktion"
+ MNU_Number,                "N~ummer"
+ MNU_Title,                 "~Name"
+ MNU_Group,                 "~Gruppe"
+ MNU_Format,                "~Format"
+ MNU_XY,                    "~B x H"
+ MNU_ThumbFmt,              "Vorschau Format"
+ MNU_ThumbXY,               "Vorschau B x H"
+ MNU_ThumbSize,             "Vorschau Grî·e"
+ MNU_Handle,                "~Handle"
+ MNU_Size,                  "Gr~î·e"
+ MNU_Day,                   "~Tag"
+ MNU_Date,                  "~Datum"
+ MNU_Time,                  "Uhr~zeit"
+
+ // Popup Menus
+ MNU_Save,                  "~Sichern"
+ MNU_Delete,                "L~îschen"
+ MNU_Unmark,                "Markierung ~aufheben"
+ MNU_UndoTitle,             "Name ~RÅckgÑngig"
+ MNU_RotateLeft,            "90¯ nach ~links drehen"
+ MNU_RotateRight,           "90¯ nach ~rechts drehen"
+ MNU_Show,                  "~Zeigen"
+ MNU_SetGroup,              "~Gruppe setzen"
+
+ MNU_SaveAll,               "Alle ~sichern"
+ MNU_DeleteAll,             "Alle ~lîschen"
+ MNU_UnmarkAll,             "Markierung ~aufheben"
+ MNU_UndoAllTitles,         "Alle Namen ~RÅckgÑngig"
+
+//----------------------------------------------------------------------------
+
+ // Column Headings          
+ // Important:  For column headings, Cameraderie will replace the
+ //             '|' with a line break.  Please do not erase the '|'
+ //             or else the column headings will be too wide.
+
+ COL_Nbr,                   "#"
+ COL_Title,                 "Name"
+ COL_Group,                 "Gruppe"
+ COL_ImageFormat,           "Bild|Format"
+ COL_ImageXY,               "Bild|B x H"
+ COL_ThumbFormat,           "Vorschau|Format"
+ COL_ThumbXY,               "Vorschau|B x H"
+ COL_ThumbSize,             "Vorschau|Grî·e"
+ COL_Handle,                "Handle"
+ COL_FileSize,              "Datei|Grî·e"
+ COL_Day,                   "Tag"
+ COL_Date,                  "Datum"
+ COL_Time,                  "Uhrzeit"
+
+ // Column Data
+ COL_Sun,                   "So"
+ COL_Mon,                   "Mo"
+ COL_Tue,                   "Di"
+ COL_Wed,                   "Mi"
+ COL_Thu,                   "Do"
+ COL_Fri,                   "Fr"
+ COL_Sat,                   "Sa"
+ COL_TooBig,                "Zu breit"      // a number is too big to fit
+ COL_Unknown,               "Unbekannt"     // an unknown file format
+
+ // Status Bar
+ STS_Status,                "  Total: %d / %d KB    Sichern: %d / %d KB    Lîschen: %-3d / %-4d KB    "
+ STS_GetList,               "Fehler beim Lesen der Dateiliste"
+ STS_RefreshList,           "Fehler beim Auffrischen der Liste"
+ STS_NoFiles,               "Keine Dateien vorhanden"
+ STS_ListingFiles,          "Fehler beim Auflisten der Dateien"
+ STS_NoThumbnail,           "Keine Vorschau verfÅgbar"
+ STS_GetThumbErr,           "Fehler beim Lesen des Vorschaubilds"
+
+//----------------------------------------------------------------------------
+
+ // Common Buttons
+ BTN_EditGroups,            "~Gruppen..."
+ BTN_Exit,                  "~Ende"
+ BTN_Yes,                   "~Ja"
+ BTN_No,                    "~Nein"
+ BTN_Cancel,                "~Abbruch"
+ BTN_Undo,                  "~RÅckgÑngig"
+ BTN_Apply,                 "An~wenden"
+ BTN_OK,                    "~OK"
+ BTN_Retry,                 "~Wiederholen"
+ BTN_Skip,                  "~öberspringen"
+ BTN_Stop,                  "~Abbruch"
+ BTN_Close,                 "Schlie·en"
+ BTN_Replace,               "~Ersetzen"
+ BTN_Create,                "~Erstellen"
+ BTN_Find,                  "~Auswahl..."
+ BTN_New,                   "~Neu"
+ BTN_Delete,                "~Lîschen"
+ BTN_Undelete,              "~ZurÅckholen"
+ BTN_Default,               "~Vorgabe"
+ BTN_Continue,              "~Fortsetzen"
+ BTN_Open,                  "~ôffnen"
+
+ // Date Substitution characters
+ // used to insert dates into file names & paths, e.g. %y inserts the year;
+ // supply the leading character for each word in both lower & upper case
+ SUB_Year,                  "jJ"
+ SUB_Month,                 "mM"
+ SUB_Day,                   "tT"
+
+//----------------------------------------------------------------------------
+
+ // Error dialogs
+ DLG_Loading,               "Laden.  Bitte warten..."
+ DLG_ToEndNow,              "Zum Beenden bitte Ende drÅcken"
+ DLG_NoCameras,             "Keine Kamera gefunden"
+ DLG_PlugIn,                "Kamera anstîpseln und Wiederholen drÅcken"
+ DLG_ToEnd,                 "Zum Benden Ende drÅcken"
+
+ // Disconnected dialog
+ DLG_Disconnected1,         "Die Kamera wurde"
+ DLG_Disconnected2,         "abgestîpselt oder"
+ DLG_Disconnected3,         "ausgeschaltet!"
+ DLG_WindowWillClose1,      "Dieses Fenster schlie·t automatisch"
+ DLG_WindowWillClose2,      "kurz nach Wiederanstîpseln der Kamera."
+
+ // No usbresmg.sys dialog (v1.5)
+ DLG_NoUsbRes1,             "USBRESMG.SYS ist nicht installiert"
+ DLG_NoUsbRes2,             "Bei Verwendung einer PTP Kamera (z.B. Canon, Kodak) bitte installieren"
+ DLG_NoUsbRes3,             "Nicht nîtig bei Verwendung von Speicherkarten oder einer Kamera, der ein Laufwerksbuchstabe zugewiesen werden kann"
+ DLG_DoNotShow,             "Diesen Fehler nicht nochmal anzeigen"
+
+ // Select Camera dialog (v1.5)
+ DLG_Select,                "Kamera auswÑhlen..."
+ MSG_MB,                    "MB"        // your abbreviation for 'megabytes'
+ MSG_PTPCamera,             "PTP Kamera"
+ MSG_Unidentified,          "Unbekanntes GerÑt"
+ MSG_NoCamera,              "[ Keine Kamera ]"
+ MSG_DisconnectDevice,      "Das ausgeworfene Laufwerk bitte entfernen"
+ MSG_UnableToEject,         "Kann ausgewÑhltes Laufwerk nicht auswerfen"
+
+ // Removable Drive Error dialog (v1.5)
+ DLG_Removable1,            "Wechsellaufwerksfehler !"
+ DLG_Removable2,            "LVM Fehler beim EinhÑngen der Wechsellaufwerke"
+ DLG_Removable3,            "Entfernen Sie die USB-Laufwerke nach 'Eject'."
+ DLG_Removable4,            "Falls nîtig, alle USB-Laufwerke entfernen."
+ DLG_Removable5,            "Diese Fenster schliesst wenn der LVM weitermacht.|Wenn nicht, Weiter drÅcken"
+
+ // Eject RemovableDrives dialog (v1.5)
+ DLG_Eject                  "Wechsellaufwerke auswerfen?"   // dialog title
+ MSG_Ejecting               "Wechsellaufwerke auswerfen..." // dialog title
+ MSG_ThisMayTake            "Kann ein paar Sekunden dauern"
+
+//----------------------------------------------------------------------------
+
+ // Directory dialog
+ DLG_ChooseDir,             "Verzeichnis wÑhlen"
+ DLG_Drive,                 "Laufwerk"
+ DLG_Directory,             "Verzeichnis"
+ DLG_DirDlgMsg1,            "Um neue Verzeichnisse zu erstellen,"
+ DLG_DirDlgMsg2,            "den Namen zum vorhandenen Pfad hinzufÅgen"
+
+ // Colors dialog
+ DLG_View,                  "Zeigen"
+ DLG_WindowColors,          "Farben und Schriften im Fenster"
+ DLG_HighlightColors,       "Farben zum Hervorheben"
+ DLG_GroupColors,           "Farbe fÅr Gruppennamen"
+ DLG_SeparatorColor,        "Farbe fÅr Spaltentrenner"
+
+ // Column dialog strings
+ MSG_Show,                  "Zeigen"
+ MSG_Column,                "Spalte"
+
+ // Info dialog
+ DLG_Usb,                   "USB"
+ DLG_Version,               "Version"
+ DLG_BusDevice,             "Bus-GerÑt"
+ DLG_VendorProduct,         "Hersteller - Produkt"
+ DLG_Camera,                "Kamera"
+ DLG_FileFormats,           "Dateiformate"
+ DLG_CaptureFormat,         "*  Aufnahmeformat"
+ DLG_SerialNumber,          "Seriennummer"
+ DLG_DeviceVersion,         "GerÑteversion"
+
+//----------------------------------------------------------------------------
+
+ // Confirm Save dialog
+ DLG_SaveChanges,           "énderungen sichern..."
+ DLG_Save,                  "~Speichere %d Datei(en) - %d KB"
+ DLG_EraseAfterSave,        "Nach Spei~chern lîschen"
+ DLG_EraseLater,            "Zum Lîschen ~markieren"
+ DLG_DontErase,             "~Nicht markieren oder lîschen"
+ DLG_Erase,                 "~Lîsche %d Datei(en) - %d KB"
+
+ // Save Files dialog
+ DLG_ReplaceAll,            "Alle ~Dateien ersetzen"
+
+ // Save Files strings
+ MSG_Erasing,               "Lîsche %s"
+ MSG_Saving,                "Speichere %s als:"
+ MSG_SavedErased,           "%d Datei(en) gespeichert - %d Datei(en) gelîscht"
+
+ // Done Saving dialog
+ MSG_SavedOK,               "%d Datei(en) (%d KB) wurden gespeichert"
+ MSG_SaveEraseOK,           "%d Datei(en) (%d KB) wurden gespeichert und gelîscht"
+ MSG_NotSaved,              "%d Datei(en) (%d KB) wurden nicht gespeichert"
+ MSG_ErasedOK,              "%d Datei(en) (%d KB) wurden gelîscht"
+ MSG_NotErased,             "%d Datei(en) (%d KB) wurden nicht gelîscht"
+
+ // Save Files errors
+ // Important:  limit MSG_xxx & MSGxxx1 strings to less than 45 characters;
+ //             if needed, you can split the MSG_xxx2 strings into 2 lines
+ //             using the '|' character
+ MSG_TooLong1,              "Der Pfad ist zu lang (Åber 259 Zeichen)"
+ MSG_TooLong2,              "Pfad Ñndern und Wiederholen drÅcken"
+ MSG_FileExists1,           "Eine Datei mit diesem Namen existiert bereits"
+ MSG_FileExists2,           "Ersetzen drÅcken oder Datei umbenennen|und Wiederholen drÅcken"
+ MSG_PathNotFound1,         "Angegebener Pfad konnte nicht gefunden werden"
+ MSG_PathNotFound2,         "Erstellen drÅcken oder Pfad Ñndern|und Wiederholen drÅcken"
+ MSG_CouldNotCreate1,       "Verzeichnis konnte nicht erstellt werden"
+ MSG_CouldNotCreate2,       "Verzeichnis Ñndern und Erstellen drÅcken"
+ MSG_GetData,               "Kann Daten nicht von der Kamrea lesen"
+ MSG_OpCancelled,           "Der laufende Vorgang wurde abgebrochen"
+ MSG_OpenFile,              "Die Datei kann nicht geîffnet werden"
+ MSG_WriteFile,             "Datei kann nicht geschrieben werden"
+ MSG_ErasePhoto,            "Bilder kînnen nicht gelîscht werden"
+ MSG_Fatal1,                "Es gab einen schwerwiegenden Fehler"
+ MSG_Fatal2,                "Abbruch drÅcken und|dann nochmal versuchen"
+
+//----------------------------------------------------------------------------
+
+ // Groups dialog
+ DLG_GroupName,             "Gruppen~name"
+ DLG_SaveDir,               "Speichern in ~Verzeichnis"
+ DLG_Template,              "V~orgabe Dateiname"
+ DLG_Serial,                "L~fnd. Nr."
+ DLG_Digits,                "~Stellen"
+ DLG_InsertsSerial,         "#  fÅgt fortlaufende Nummer ein"
+ DLG_CopiesFilename,        "*  kopiert Dateinamen oder Erweiteurng"
+ DLG_InsertYMD,             "%j, %m, %t  Jahr, Monat, Tag einfÅgen"
+
+ // Group dialog strings
+ MSG_Deleted,               "_gelîscht_"
+ MSG_Btn,                   "Sichtbar"
+ MSG_Group,                 "Gruppe"
+ MSG_NewGroup,              "Neue Gruppe %d"
+
+ // Group dialog errors
+ MSG_ButtonsAssigned,       "Alle 10 SchaltflÑchen fÅr die Gruppen sind bereits belegt"
+ MSG_DirIsBlank,            "Sichern in Verzeichnis ist leer"
+ MSG_DirCreated,            "Sichern in Verzeichnis wurde erstellt"
+ MSG_PathIsAFile,           "Verzeichnisname ist ein Dateiname"
+ MSG_DirNotCreated,         "Verzeichnis zum Speichern konnte nicht erstellt werden"
+ MSG_GroupNameBlank,        "Gruppenname kann nicht leer sein"
+ MSG_GroupNameInUse,        "Gruppenname schon in Benutzung"
+ MSG_PathDoesNotExist,      "Pfad existiert nicht - Erstellen drÅcken"
+ MSG_PathInvalid,           "UngÅltiger Pfad"
+
+ // Default Groups
+ GRP_Default,               "Standard"
+ GRP_Family,                "Familie"
+ GRP_Travel,                "Reisen"
+ GRP_Nature,                "Natur"
+ GRP_Other,                 "Andere"
+ GRP_FamilyTempl,           "Famile#"
+ GRP_TravelTempl,           "Reisen#"
+ GRP_NatureTempl,           "Natur#"
+ GRP_OtherTempl,            "Andere#"
+
+//----------------------------------------------------------------------------
+
+ // Intro dialog            // IntroMsg1&2 can be rephrased if needed
+ DLG_Welcome,               "Willkommen zu"
+ DLG_PleaseSelect,          "Verzeichnis zum Abspeichern der Bilder"
+ DLG_IntroMsg1,             "Dies ist nur das von Camaraderie benutzte Standardverzeichnis,"
+ DLG_IntroMsg2,             "Bilder kînnen in beliebigen Verzeichnissen gespeichert werden."
+
+ // Startup errors
+ MSG_InitDisplay,           "Hauptfenster kann nicht initialisiert werden"
+ MSG_InitCamera,            "Kamera kann nicht initialisiert werden"
+ MSG_ReopenCamera,          "Verbindung zur Kamera kann nicht erneut hergestellt werden!"
+
+//----------------------------------------------------------------------------
+

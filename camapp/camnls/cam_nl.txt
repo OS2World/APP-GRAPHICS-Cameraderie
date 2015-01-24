@@ -1,0 +1,377 @@
+/****************************************************************************/
+/* cam_nl.txt - v1.5
+
+  Use this file to translate Cameraderie into your language.
+
+  Instructions:
+  =============
+    - Translate the quoted strings in the right-hand column below.
+
+    - Use a tilde ('~') to set a keyboard shortcut for menu items.
+
+    - Error messages should be short but understandable - use the
+      phrasing that works best in your language.
+
+    - Some items have a short comment next to them to help you
+      identify how they are used - you can delete the comment if needed.
+
+    - When you are done, run cam_xx.cmd to create your language dll
+      (run it without any parameters to display its help screen).
+
+    - If you would like to share your work with other users,
+      please add your name to the Contributors list below,
+      then email *this file* (not the dll) to:  rich@e-vertise.com
+
+  Thanks for your help!
+
+  FYI... strings that are new or changed in this version start
+         in the first column;  strings that were used in previous
+         versions are indented one space
+
+*/
+/****************************************************************************/
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Cameraderie.
+ *
+ * The Initial Developer of the Original Code is Richard L. Walsh.
+ *
+ * Portions created by the Initial Developer are Copyright (C) 2006,2007
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *  Kris Steenhaut - translation to Dutch
+ *  Guillaume Gay - translation to French <GuillaumeGay@bigfoot.com>
+ *  Franz Bakan - translation to German
+ *  [your name here] - translation to [language]
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/****************************************************************************/
+
+ // Don't change
+ // this column             Translate this column
+ // ================        =======================
+
+ // Menubar
+ MNU_File,                  "~Bestand"
+ MNU_Open,                  "~Openen..."
+ MNU_Refresh,               "~Lijst vernieuwen"
+ MNU_SaveNow,               "~Transfereren naar de PC"
+ MNU_CameraInfo,            "~Over het fototoestel..."
+ MNU_Exit,                  "~Afsluiten"
+ MNU_Sort,                  "~Sorteren"
+ MNU_Indicators,            "Kies de ~volgorde: Oplopend of aflopend"
+ MNU_Done,                  "~Klaar"
+ MNU_View,                  "~Weergave"
+ MNU_Details,               "~Gedetailleerd"
+ MNU_Small,                 "Kleine id~eogrammen"
+ MNU_Medium,                "~Ideogrammen middelgroot"
+ MNU_Large,                 "~Grote ideogrammen"
+ MNU_Reset,                 "~Standaardbreedte"
+ MNU_Rearrange,             "Kolommen ~beheren..."
+ MNU_Colors,                "~Lettertypenpalet en kleuren"
+ MNU_Groups,                "~Groepen"
+ MNU_EditGroups,            "~Bewerken..."
+ MNU_Options,               "Ins~tellingen"
+ MNU_Rotate,                "~Draaien"
+ MNU_RotateOnLoad,          "A~utomatisch draaien"
+ MNU_RotateOnSave,          "Draaien tijdens het bewaren"
+ MNU_Removables,            "~Uitwerpbare media"
+ MNU_MountDrives,           "~Schijfstations automatisch aankoppelen"
+ MNU_EjectInfo,             "Bij afsluiten programma..."
+ MNU_ShowEjectDlg,          "~Dialoogkader tonen"
+ MNU_AlwaysEject,           "~Altijd uitwerpen"
+ MNU_NeverEject,            "~Nooit uitwerpen"
+ MNU_Restore,               "S~tandaardinstellingen herinvoeren bij het afsluiten"
+
+ // Sort Menu
+ MNU_Action,                "~Volgens..."
+ MNU_Number,                "~Nummer"
+ MNU_Title,                 "~Bestandsnaam"
+ MNU_Group,                 "Groe~p"
+ MNU_Format,                "Bestands~indeling"
+ MNU_XY,                    "~Afmetingen van de afbeelding"
+ MNU_ThumbFmt,              "~Ideogramtype"
+ MNU_ThumbXY,               "~Afmetingen van het ideogram"
+ MNU_ThumbSize,             "~Grootte van het ideogram"
+ MNU_Handle,                "~Handle"
+ MNU_Size,                  "Bestands~grootte"
+ MNU_Day,                   "~Dag"
+ MNU_Date,                  "Dat~um"
+ MNU_Time,                  "Ti~jd"
+
+ // Popup Menus
+ MNU_Save,                  "~Geselecteerd bestand markeren"
+ MNU_Delete,                "Gemarkeerd bestand ~wissen"
+ MNU_Unmark,                "~Markering opheffen"
+ MNU_UndoTitle,             "~Selectie opheffen"
+ MNU_RotateLeft,            "Draaien in ~tegenwijzerzin"
+ MNU_RotateRight,           "Draaien in wijzerzin"
+ MNU_Show,                  "~Tonen"
+ MNU_SetGroup,              "~Aan groep toewijzen"
+
+ MNU_SaveAll,               "~Geselecteerd bestand markeren"
+ MNU_DeleteAll,             "Gemarkeerd bestand ~wissen"
+ MNU_UnmarkAll,             "~Alle markeringen opheffen"
+ MNU_UndoAllTitles,         "~Selecties opheffen"
+
+//----------------------------------------------------------------------------
+
+ // Column Headings
+ // Important:  For column headings, Cameraderie will replace the
+ //             '|' with a line break.  Please do not erase the '|'
+ //             or else the column headings will be too wide.
+
+ COL_Nbr,                   "#"
+ COL_Title,                 "Bestandsnaam"
+ COL_Group,                 "Groep"
+ COL_ImageFormat,           "Bestandsindeling"
+ COL_ImageXY,               "Afmetingen van|het afbeelding"
+ COL_ThumbFormat,           "Ideogramttype"
+ COL_ThumbXY,               "Afmetingen van|het ideogram"
+ COL_ThumbSize,             "Ideogram|grootte"
+ COL_Handle,                "Handle"
+ COL_FileSize,              "Bestand|grootte"
+ COL_Day,                   "Dag"
+ COL_Date,                  "Datum"
+ COL_Time,                  "Tijd"
+
+ // Column Data
+ COL_Sun,                   "Zondag"
+ COL_Mon,                   "Maandag"
+ COL_Tue,                   "Dinsdag"
+ COL_Wed,                   "Woensdag"
+ COL_Thu,                   "Donderdag"
+ COL_Fri,                   "Vrijdag"
+ COL_Sat,                   "Zaterdag"
+ COL_TooBig,                "Te groot"      // a number is too big to fit
+ COL_Unknown,               "Onbekend"       // an unknown file format
+
+ // Status Bar
+ STS_Status,                "  Totaal: %d / %d kb    Getransfereerd: %d / %d kb    Gewist: %d / %d kb    "
+ STS_GetList,               "Bestandenlijst kan niet worden opgehaald."
+ STS_RefreshList,           "De lijst kan niet worden vernieuwd"
+ STS_NoFiles,               "Geen bestanden om te tonen aanwezig"
+ STS_ListingFiles,          "Probleem tijdens het schikken van de lijst"
+ STS_NoThumbnail,           "Geen ideogram beschikbaar"
+ STS_GetThumbErr,           "Probleem bij het cre‰ren van het ideogram"
+
+//----------------------------------------------------------------------------
+
+ // Common Buttons
+ BTN_EditGroups,            "~Groepen bewerken"
+ BTN_Exit,                  "~Afsluiten"
+ BTN_Yes,                   "~Ja"
+ BTN_No,                    "~Neen"
+ BTN_Cancel,                "~Annuleren"
+ BTN_Undo,                  "Teru~g"
+ BTN_Apply,                 "~Toepassen"
+ BTN_OK,                    "~OK"
+ BTN_Retry,                 "~Opnieuw"
+ BTN_Skip,                  "O~verslaan"
+ BTN_Stop,                  "~Stop"
+ BTN_Close,                 "Sl~uiten"
+ BTN_Replace,               "V~ervangen"
+ BTN_Create,                "~Aanmaken"
+ BTN_Find,                  "~Zoeken"
+ BTN_New,                   "~Nieuw"
+ BTN_Delete,                "~Wissen"
+ BTN_Undelete,              "O~ngedaan maken"
+ BTN_Default,               "~Standaard"
+ BTN_Continue,              "~Verder"
+ BTN_Open,                  "~Openen"
+
+ // Date Substitution characters
+ // used to insert dates into file names & paths, e.g. %y inserts the year;
+ // supply the leading character for each word in both lower & upper case
+ SUB_Year,                  "jJ"
+ SUB_Month,                 "mM"
+ SUB_Day,                   "dD"
+
+//----------------------------------------------------------------------------
+
+ // Error dialogs
+ DLG_Loading,               "Bezig...eventjes geduld..."
+ DLG_ToEndNow,              "Om NU te eindigen, klik op 'Afsluiten'"
+ DLG_NoCameras,             "Geen camera aangesloten"
+ DLG_PlugIn,                "Sluit een camera aan, en klik daarna op 'Opnieuw'"
+ DLG_ToEnd,                 "Om het programma te be‰indigen, klik op 'Afsluiten'"
+
+ // Disconnected dialog
+ DLG_Disconnected1,         "De camera werd"
+ DLG_Disconnected2,         "losgekoppeld of"
+ DLG_Disconnected3,         "uitgeschakeld !"
+ DLG_WindowWillClose1,      "Dit venster zal worden gesloten van zodra"
+ DLG_WindowWillClose2,      "een camera wordt aangesloten."
+
+ // No usbresmg.sys dialog (v1.5)
+ DLG_NoUsbRes1,             "Het bestand USBRESMG.SYS werd niet ge‹nstalleerd."
+ DLG_NoUsbRes2,             "Het bestand USBRESMG.SYS moet worden ge‹nstalleerd vooraleer PTP-compatibele camera's aan te sluiten."
+ DLG_NoUsbRes3,             "Voor de andere gevallen is het bestand USBRESMG.SYS dus niet noodzakelijk."
+ DLG_DoNotShow,             "Deze foutmelding in het vervolg niet meer laten zien."
+
+ // Select Camera dialog (v1.5)
+ DLG_Select,                "Kies een camera uit..."
+ MSG_MB,                    "Mb"        // your abbreviation for 'megabytes'
+ MSG_PTPCamera,             "PTP-compatibele camera"
+ MSG_Unidentified,          "Niet te identifici‰ren camera"
+ MSG_NoCamera,              "[ geen camera ]"
+ MSG_DisconnectDevice,      "Koppel ook de camera zelf los!"
+ MSG_UnableToEject,         "Het medium kon niet worden uitgeworpen!"
+
+ // Removable Drive Error dialog (v1.5)
+ DLG_Removable1,            "Probleem bij het toewijzen van een stationsletter !"
+ DLG_Removable2,            "LVM liep vast tijdens het initi‰ren van de stations."
+ DLG_Removable3,            "Verwijder fysiek uit de computer de USB-apparaten (na ze uitgeworpen te hebben)."
+ DLG_Removable4,            "Kijk na of deze USB-apparaten wel degelijk fysiek verwijderd werden."
+ DLG_Removable5,            "Nadat LVM kon vervolgen zal dit venster worden gesloten.|Klik ander op de knop Verder"
+
+ // Eject RemovableDrives dialog (v1.5)
+ DLG_Eject                  "Media uitwerpen?"       // dialog title
+ MSG_Ejecting               "Media worden uitgeworpen..."  // dialog title
+ MSG_ThisMayTake            "Dit kan een poosje in beslag nemen"
+
+//----------------------------------------------------------------------------
+
+ // Directory dialog
+ DLG_ChooseDir,             "~Kies een directory"
+ DLG_Drive,                 "~Station"
+ DLG_Directory,             "~Directory"
+ DLG_DirDlgMsg1,            "Om nieuwe directories aan te maken,"
+ DLG_DirDlgMsg2,            "voeg de naam toe aan een bestaand pad."
+
+ // Colors dialog
+ DLG_View,                  "Weergave"
+ DLG_WindowColors,          "Kleuren en lettertypes"
+ DLG_HighlightColors,       "Kleuren accentuering"
+ DLG_GroupColors,           "Kleuren groepsnamen"
+ DLG_SeparatorColor,        "Kleuren kolomlijnen"
+
+ // Column dialog strings
+ MSG_Show,                  "Toon de"
+ MSG_Column,                "Kolommen"
+
+ // Info dialog
+ DLG_Usb,                   "USB"
+ DLG_Version,               "Versie"
+ DLG_BusDevice,             "Bus-Apparaat"
+ DLG_VendorProduct,         "Productinformatie"
+ DLG_Camera,                "Fototoestel"
+ DLG_FileFormats,           "Bestandsindeling"
+ DLG_CaptureFormat,         "*  met bestandsindeling"
+ DLG_SerialNumber,          "Serienummer"
+ DLG_DeviceVersion,         "Apparaatversie"
+
+//----------------------------------------------------------------------------
+
+ // Confirm Save dialog
+ DLG_SaveChanges,           "Transfereren..."
+ DLG_Save,                  "~Transfer van %d bestand(en) - %d kb"
+ DLG_EraseAfterSave,        "Wissen ~NA de tranfer"
+ DLG_EraseLater,            "~Aanduiden om te verwijderen"
+ DLG_DontErase,             "~Niet wissen"
+ DLG_Erase,                 "~Aanduiden om %d bestand(en) te wissen."
+
+ // Save Files dialog
+ DLG_ReplaceAll,            "~Alle bestanden vervangen"
+
+ // Save Files strings
+ MSG_Erasing,               "Wissen bezig %s"
+ MSG_Saving,                "Opslaan van  %s als:"
+ MSG_SavedErased,           "%d bestand(en) bewaard - %d bestand(en) gewist"
+
+ // Done Saving dialog
+ MSG_SavedOK,               "%d bestand(en) (%d KB) werd(en) overgebracht."
+ MSG_SaveEraseOK,           "%d bestand(en) (%d KB) werd(en) overgebracht en daarna gewist."
+ MSG_NotSaved,              "%d bestand(en) (%d KB) werd(en) niet behandeld."
+ MSG_ErasedOK,              "%d bestand(en) (%d KB) werd(en) gewist."
+ MSG_NotErased,             "%d bestand(en) (%d KB) werd(en) niet gewist."
+
+ // Save Files errors
+ // Important:  limit MSG_xxx & MSGxxx1 strings to less than 45 characters;
+ //             if needed, you can split the MSG_xxx2 strings into 2 lines
+ //             using the '|' character
+ MSG_TooLong1,              "Het pad is te lang (meer dan 259 tekens)"
+ MSG_TooLong2,              "Pas het pad aan en klik op 'Opnieuw'."
+ MSG_FileExists1,           "Er bestaat reeds een ebstand met dezelfde naam."
+ MSG_FileExists2,           "Klik op 'Vervangen', of herbenoem het bestand|klik daarna op 'Opnieuw'."
+ MSG_PathNotFound1,         "Het pad kon niet worden gevonden."
+ MSG_PathNotFound2,         "Klik op 'Aanmaken', of verander het pad|klik daarna op 'Opnieuw'."
+ MSG_CouldNotCreate1,       "Het pad kon niet worden aangemaakt."
+ MSG_CouldNotCreate2,       "Wijzig het pad en klik daarna op 'Aanmaken'."
+ MSG_GetData,               "Er konden geen gegevens van de camera worden opgehaald."
+ MSG_OpCancelled,           "Het proces werd derhalve afgebroken."
+ MSG_OpenFile,              "Het bestand kon niet worden geopend."
+ MSG_WriteFile,             "Het bestand kon niet worden aangepast."
+ MSG_ErasePhoto,            "Het bestand (in de camera) kon niet worden gewist."
+ MSG_Fatal1,                "Programma- en/of systeemfout"
+ MSG_Fatal2,                "Klik eerst op de knop 'Stop' om te sluiten...|... en probeer het daarna nog eens."
+
+//----------------------------------------------------------------------------
+
+ // Groups dialog
+ DLG_GroupName,             "~Groepsnaam"
+ DLG_SaveDir,               "~Op te slaan in de directory"
+ DLG_Template,              "~Bestandsnaam Model"
+ DLG_Serial,                "~Serienummer"
+ DLG_Digits,                "~Cijfers"
+ DLG_InsertsSerial,         "#  voert het serienummer in"
+ DLG_CopiesFilename,        "*  kopieert bestandsnamen of bestandsextensie"
+ DLG_InsertYMD,             "%j, %m, %d  voeg in het de dag, het jaar en de maand"
+
+ // Group dialog strings
+ MSG_Deleted,               "_gewist_"
+ MSG_Btn,                   "Knop"
+ MSG_Group,                 "Groep"
+ MSG_NewGroup,              "Nieuwe Groep %d"
+
+ // Group dialog errors
+ MSG_ButtonsAssigned,       "De 10 beschikbare knoppen werden hebben reeds een toewijzing gekregen."
+ MSG_DirIsBlank,            "Er werd een nulbestand (= met grootte nul) weggeschreven."
+ MSG_DirCreated,            "De directory bestaat reeds."
+ MSG_PathIsAFile,           "De naam van het pad is dezelfde van de bestandsnaam."
+ MSG_DirNotCreated,         "De directory kon niet worden aangemaakt."
+ MSG_GroupNameBlank,        "Een groepsnaam moet tekens bevatten."
+ MSG_GroupNameInUse,        "Deze groepsnaam werd vergrendeld (is in gebruik)"
+ MSG_PathDoesNotExist,      "Het pad bestaat niet - klik op 'Aanmaken'"
+ MSG_PathInvalid,           "Het pad (naam en/of locatie) is ongeldig"
+
+ // Default Groups
+ GRP_Default,               "Standaard"
+ GRP_Family,                "Familie"
+ GRP_Travel,                "Reizen"
+ GRP_Nature,                "Natuur"
+ GRP_Other,                 "Andere"
+ GRP_FamilyTempl,           "Familie#"
+ GRP_TravelTempl,           "Reizen#"
+ GRP_NatureTempl,           "Natuur#"
+ GRP_OtherTempl,            "Andere#"
+
+//----------------------------------------------------------------------------
+
+ // Intro dialog            // IntroMsg1&2 can be rephrased if needed
+ DLG_Welcome,               "Welkom!"  // Welcome to Cameraderie
+ DLG_PleaseSelect,          "Maak eerst een standaarddirectory aan."
+ DLG_IntroMsg1,             "Men kan verder zoveel directory's aanmaken als men maar wilt"
+ DLG_IntroMsg2,             "maar toch moet er eerst en vooral standaarddirectoryeen worden aangemaakt"
+
+ // Startup errors
+ MSG_InitDisplay,           "Het hoofdscherm kon niet worden ge‹nitialiseerd!"
+ MSG_InitCamera,            "De fototoestel kon niet worden ge‹nitialiseerd!"
+ MSG_ReopenCamera,          "Geen toegang meer tot het fototoestel!"
+
+//----------------------------------------------------------------------------
+

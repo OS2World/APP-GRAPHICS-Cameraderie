@@ -26,6 +26,10 @@
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ * Copyright (c) 2015, bww bitwise works GmbH
+ *
+ * 2015-01-22 Silvan Scherrer version 1.5.3
+ *            enhanced UsbQueryDeviceReport to 4096 byte 
  *
  * ***** END LICENSE BLOCK ***** */
 
@@ -49,8 +53,8 @@
 /****************************************************************************/
 
 // version - the v1.5 betas were 1.5.0 & 1.5.1, the GA is 1.5.2
-#define CAMVERSION      0x00010502
-#define CAMNLSVER       0x00010502
+#define CAMVERSION      0x00010503
+#define CAMNLSVER       0x00010503
 
 #define CAMINI_APP      "CAMERADERIE"
 #define CAMINI_GRPAPP   "CAMGROUPS"

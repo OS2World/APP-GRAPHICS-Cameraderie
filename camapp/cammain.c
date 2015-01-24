@@ -26,6 +26,10 @@
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ * Copyright (c) 2015, bww bitwise works GmbH
+ *
+ * 2015-01-22 Silvan Scherrer version 1.5.3
+ *            enhanced UsbQueryDeviceReport to 4096 byte 
  *
  * ***** END LICENSE BLOCK ***** */
 
@@ -71,8 +75,8 @@ void            ShowDialog( HWND hwnd, char * pIniKey);
 
 /****************************************************************************/
 
-char    szCopyright[] = "Cameraderie - (C)Copyright 2006,2007  R.L.Walsh";
-char    szAppTitle[]  = "Cameraderie v1.5";
+char    szCopyright[] = "Cameraderie - (C)Copyright 2006,2007  R.L.Walsh, 2015 bww bitwise works GmbH";
+char    szAppTitle[]  = "Cameraderie v1.5.3";
 
 // declared EXTERN in camapp.h - contains commandline flags
 ULONG   ulGlobalFlags = 0;

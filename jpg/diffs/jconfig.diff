@@ -1,0 +1,20 @@
+--- H:\JPG\JPEGSRC.V6B.TAR\jpeg-6b\jconfig.doc	1994-05-23 15:51:14.000000000 -0400
++++ E:\IBMC\RW\CAM\v120\camera12-src\jpg\jconfig.h	2006-10-26 00:14:52.000000000 -0400
+@@ -1,5 +1,5 @@
+ /*
+- * jconfig.doc
++ * jconfig.h - a copy of jconfig.doc with a change or two
+  *
+  * Copyright (C) 1991-1994, Thomas G. Lane.
+  * This file is part of the Independent JPEG Group's software.
+@@ -132,7 +132,9 @@
+  * your system can't cope with binary I/O to stdin/stdout.  See comments at
+  * head of cjpeg.c or djpeg.c.
+  */
+-#undef TWO_FILE_COMMANDLINE
++/*#undef TWO_FILE_COMMANDLINE*/
++
++#define TWO_FILE_COMMANDLINE
+ 
+ /* Define this if your system needs explicit cleanup of temporary files.
+  * This is crucial under MS-DOS, where the temporary "files" may be areas

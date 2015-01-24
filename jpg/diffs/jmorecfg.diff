@@ -1,0 +1,22 @@
+--- H:\JPG\JPEGSRC.V6B.TAR\jpeg-6b\jmorecfg.h	1997-08-09 19:58:56.000000000 -0400
++++ E:\IBMC\RW\CAM\v120\camera12-src\jpg\jmorecfg.h	2006-10-26 00:42:14.000000000 -0400
+@@ -311,10 +311,15 @@
+  *    can't use color quantization if you change that value.
+  */
+ 
+-#define RGB_RED		0	/* Offset of Red in an RGB scanline element */
+-#define RGB_GREEN	1	/* Offset of Green */
+-#define RGB_BLUE	2	/* Offset of Blue */
+-#define RGB_PIXELSIZE	3	/* JSAMPLEs per RGB scanline element */
++//#define RGB_RED         0	/* Offset of Red in an RGB scanline element */
++//#define RGB_GREEN       1	/* Offset of Green */
++//#define RGB_BLUE        2	/* Offset of Blue */
++//#define RGB_PIXELSIZE   3	/* JSAMPLEs per RGB scanline element */
++
++#define RGB_RED         2	/* Offset of Red in an RGB scanline element */
++#define RGB_GREEN       1	/* Offset of Green */
++#define RGB_BLUE        0	/* Offset of Blue */
++#define RGB_PIXELSIZE   3	/* JSAMPLEs per RGB scanline element */
+ 
+ 
+ /* Definitions for speed-related optimizations. */

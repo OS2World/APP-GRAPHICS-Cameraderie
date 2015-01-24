@@ -16,6 +16,9 @@
  * additions are licensed under the Mozilla Public License v1.1
  * 
  * Copyright (c) 2006, 2007 Richard L Walsh <rich@e-vertise.com>
+ * Copyright (c) 2015, bww bitwise works GmbH
+ *
+ * 2015-01-22 Silvan Scherrer enhanced UsbQueryDeviceReport to 4096 byte 
  *
  */
 /***************************************************************************/
@@ -52,7 +55,7 @@ int         usb_find_devices( usb_device **devices)
   ULONG     len;
   usb_device *   devList = 0;
   usb_device *   dev;
-  char      report[1024];
+  char      report[4096];
 
   rc = UsbQueryNumberDevices( &cntDev);
   if (rc) {
